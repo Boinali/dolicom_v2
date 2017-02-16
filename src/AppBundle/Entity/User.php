@@ -48,7 +48,7 @@ class User extends BaseUser
      * @param string $github_id
      * @return User
      */
-    public function setgithub_id($facebookId)
+    public function setgithub_id($github_id)
     {
         $this->github_id = $github_id;
 
