@@ -89,7 +89,7 @@ hwi_oauth:
         properties:
             github: github_id
     resource_owners:
-        # Facebook Access
+        # github Access
         github:
             type:                github
             client_id:           ec802b3998e11be8b92e
