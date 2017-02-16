@@ -43,11 +43,11 @@ security:
            pattern:  ^/login$
            security: false
  
-           remember_me:
-               key: "%secret%"
-               lifetime: 31536000
-               path: /
-               domain: ~
+           #remember_me:
+               #key: "%secret%"
+               #lifetime: 31536000
+               #path: /
+               #domain: ~
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
