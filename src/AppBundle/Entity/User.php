@@ -32,9 +32,9 @@ class User extends BaseUser
      *
      * @ORM\Column(name="github_id", type="string", nullable=true)
      */
-    private $github_id;
+    protected $github_id;
 
-    private $githubAccessToken;
+    protected $githubAccessToken;
 
     /**
      * @return integer
