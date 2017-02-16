@@ -23,6 +23,11 @@ hwi_oauth_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
     prefix:   /login
 
+# Github Login
+github_login:
+    pattern: /login/check-github
+
+
 
 #fos_user
 fos_user_security:
