@@ -39,9 +39,9 @@ security:
 #
 #                oauth_user_provider:
 #                    service: my.oauth_aware.user_provider.service
-        login:
-           pattern:  ^/login$
-           security: false
+#        login:
+#           pattern:  ^/login$
+#           security: false
  
            #remember_me:
                #key: "%secret%"
