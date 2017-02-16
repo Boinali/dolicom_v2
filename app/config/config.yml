@@ -77,23 +77,23 @@ easy_admin:
         - AppBundle\Entity\User
 
 #hwi_oauth
-hwi_oauth:
-    # list of names of the firewalls in which this bundle is active, this setting MUST be set
-    connect:
-        confirmation: true
-        registration_form: fos_user.registration.form
-    firewall_names: [secured_area]
-    
-    fosub:
-        username_iterations: 30
-        properties:
-            github: github_id
-    resource_owners:
-        # github Access
-        github:
-            type:                github
-            client_id:           ec802b3998e11be8b92e
-            client_secret:       193a2eb94f43e2ec43b1f912e61843151a6506d2
-            scope:               "user:n.boinali@intech-so.fr,public_repo"
-            options:
-                csrf: true
+#hwi_oauth:
+#    # list of names of the firewalls in which this bundle is active, this setting MUST be set
+#    connect:
+#        confirmation: true
+#        registration_form: fos_user.registration.form
+#    firewall_names: [secured_area]
+#
+#    fosub:
+#        username_iterations: 30
+#        properties:
+#            github: github_id
+#    resource_owners:
+#        # github Access
+#        github:
+#            type:                github
+#            client_id:           ec802b3998e11be8b92e
+#            client_secret:       193a2eb94f43e2ec43b1f912e61843151a6506d2
+#            scope:               "user:n.boinali@intech-so.fr,public_repo"
+#            options:
+#                csrf: true
