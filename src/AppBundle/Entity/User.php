@@ -88,7 +88,7 @@ class User extends BaseUser
     /**
      * @var string
      * @ORM\Column(name="dLogin", type="varchar", nullable=true, length=24)
-     * @Assert\NotBlank
+     * @Assert\
      */
     protected $dLogin;
     /**
@@ -98,7 +98,7 @@ class User extends BaseUser
     /**
      * @var string
      * @ORM\Column(name="dFirstname", type="varchar", nullable=true, length=50)
-     * @Assert\NotBlank
+     * @Assert\
      */
     protected $dFirstname;
     /**
