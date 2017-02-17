@@ -109,7 +109,10 @@ class User extends BaseUser
     /**
      * @var string
      * @ORM\Column(name="dEmail", type="varchar", nullable=true, length=255)
-     * @Assert\Email()
+     * @Assert\Email(
+     *  message = "The email '{{ value }}' is not a valid email.",
+     *  checkMX = true
+     * )
      */
     protected $dEmail;
 
