@@ -3,7 +3,7 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Contraints  as Assert;
 /**
  * @ORM\Entity
  * @ORM\Table(name="dc_user")
@@ -20,8 +20,8 @@ class DCUser extends BaseUser
 
     /**
      * @var string
-     *
      * @ORM\Column(name="dLogin", type="varchar(24)", nullable=true)
+     * @Assert\NotBlank
      */
     protected $dLogin;
     /**
@@ -30,20 +30,19 @@ class DCUser extends BaseUser
     protected $dMDP;
     /**
      * @var string
-     *
-     * @ORM\Column(name="dFirstname", type="varchar(50)", nullable=true)
+     * @ORM\Column(name="dFirstname", type="varchar", nullable=true, Length=50)
+     * @Assert\NotBlank
      */
     protected $dFirstname;
     /**
      * @var string
-     *
-     * @ORM\Column(name="dLastname", type="varchar(50)", nullable=true)
+     * @ORM\Column(name="dLastname", type="varchar", nullable=true, Length=50)
      */
     protected $dLastname;
     /**
      * @var string
-     *
-     * @ORM\Column(name="dEmail", type="varchar(255)", nullable=true)
+     * @ORM\Column(name="dEmail", type="varchar", nullable=true, Length=255)
+     * @Assert\Email
      */
     protected $dEmail;
 
