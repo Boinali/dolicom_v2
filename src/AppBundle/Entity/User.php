@@ -63,6 +63,11 @@ class User extends BaseUser
         return $this->github_id;
     }
 
+    // surcharge inutile
+
+    public  function  getgithub_id()
+    {return $this->github_id;}
+
     /**
      * @param string $githubAccessToken
      * @return User
