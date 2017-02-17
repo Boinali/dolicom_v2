@@ -20,7 +20,7 @@ class DCUser extends BaseUser
 
     /**
      * @var string
-     * @ORM\Column(name="dLogin", type="varchar(24)", nullable=true)
+     * @ORM\Column(name="dLogin", type="varchar", nullable=true, Length=24)
      * @Assert\NotBlank
      */
     protected $dLogin;
