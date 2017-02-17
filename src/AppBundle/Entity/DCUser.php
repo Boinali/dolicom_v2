@@ -47,11 +47,7 @@ class DCUser extends BaseUser
      */
     protected $dEmail;
 
-    /*
-     * Getters & Setters
-     *
-     * */
-
+    /* Getters & Setters */
 
     /**
      * @return string
@@ -69,7 +65,22 @@ class DCUser extends BaseUser
         $this->dLogin = $dLogin;
         return $this;
     }
-
+    /**
+     * @return string
+     */
+    public function getDMDP()
+    {
+        return $this->dMDP;
+    }
+    /**
+     * @param string $dMDP
+     * @return user
+     */
+    public function setDMDP($dMDP)
+    {
+        $this->dMDP = $dMDP;
+        return $this;
+    }
     /**
      * @return string
      */
