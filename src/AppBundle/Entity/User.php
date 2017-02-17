@@ -58,7 +58,7 @@ class User extends BaseUser
     /**
      * @return string
      */
-    public function getgithub_id()
+    public function getGithubId()
     {
         return $this->github_id;
     }
