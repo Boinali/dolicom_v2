@@ -48,22 +48,17 @@ class User extends BaseUser
      * @param string $github_id
      * @return User
      */
-    public function setGithubId($github_id)
-    {
-        $this->github_id = $github_id;
-        return $this;
-    }
-   /* public function setgithub_id($github_id)
+    public function setgithub_id($github_id)
     {
         $this->github_id = $github_id;
 
         return $this;
-    }*/
+    }
 
     /**
      * @return string
      */
-    public function getGithubId()
+    public function getgithub_id()
     {
         return $this->github_id;
     }
