@@ -87,7 +87,7 @@ class User extends BaseUser
 
     /**
      * @var string
-     * @ORM\Column(name="dLogin", type="varchar", nullable=true, Length=24)
+     * @ORM\Column(name="dLogin", type="varchar", nullable=true, length=24)
      * @Assert\NotBlank
      */
     protected $dLogin;
@@ -97,18 +97,18 @@ class User extends BaseUser
     protected $dMDP;
     /**
      * @var string
-     * @ORM\Column(name="dFirstname", type="varchar", nullable=true, Length=50)
+     * @ORM\Column(name="dFirstname", type="varchar", nullable=true, length=50)
      * @Assert\NotBlank
      */
     protected $dFirstname;
     /**
      * @var string
-     * @ORM\Column(name="dLastname", type="varchar", nullable=true, Length=50)
+     * @ORM\Column(name="dLastname", type="varchar", nullable=true, length=50)
      */
     protected $dLastname;
     /**
      * @var string
-     * @ORM\Column(name="dEmail", type="varchar", nullable=true, Length=255)
+     * @ORM\Column(name="dEmail", type="varchar", nullable=true, length=255)
      * @Assert\Email
      */
     protected $dEmail;
