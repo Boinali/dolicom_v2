@@ -34,10 +34,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('create, _read, _update, _delete_index') }}">Back to the list</a>
+            <a href="{{ path('crud_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('create, _read, _update, _delete_edit', { 'id': user.id }) }}">Edit</a>
+            <a href="{{ path('crud_edit', { 'id': user.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

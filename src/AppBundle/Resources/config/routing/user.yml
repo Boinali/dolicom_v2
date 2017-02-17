@@ -1,24 +1,24 @@
-create, _read, _update, _delete_index:
+crud_index:
     path:     /
     defaults: { _controller: "AppBundle:User:index" }
     methods:  GET
 
-create, _read, _update, _delete_show:
+crud_show:
     path:     /{id}/show
     defaults: { _controller: "AppBundle:User:show" }
     methods:  GET
 
-create, _read, _update, _delete_new:
+crud_new:
     path:     /new
     defaults: { _controller: "AppBundle:User:new" }
     methods:  [GET, POST]
 
-create, _read, _update, _delete_edit:
+crud_edit:
     path:     /{id}/edit
     defaults: { _controller: "AppBundle:User:edit" }
     methods:  [GET, POST]
 
-create, _read, _update, _delete_delete:
+crud_delete:
     path:     /{id}/delete
     defaults: { _controller: "AppBundle:User:delete" }
     methods:  DELETE

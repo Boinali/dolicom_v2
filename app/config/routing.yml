@@ -56,4 +56,7 @@ easy_admin_bundle:
     type:     annotation
     prefix:   /admin
 
-
+#crud
+app_crud:
+        resource: "@AppBundle/Resources/config/routing/user.yml"
+        prefix:   /crud
