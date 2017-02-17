@@ -87,7 +87,7 @@ class User extends BaseUser
 
     /**
      * @var string
-     * @ORM\Column(name="dLogin", type="varchar", nullable=true, length=24)
+     * @ORM\Column(name="dLogin", type="string", nullable=true, length=24)
      *
      */
     protected $dLogin;
@@ -97,18 +97,18 @@ class User extends BaseUser
     protected $dMDP;
     /**
      * @var string
-     * @ORM\Column(name="dFirstname", type="varchar", nullable=true, length=50)
+     * @ORM\Column(name="dFirstname", type="string", nullable=true, length=50)
      *
      */
     protected $dFirstname;
     /**
      * @var string
-     * @ORM\Column(name="dLastname", type="varchar", nullable=true, length=50)
+     * @ORM\Column(name="dLastname", type="string", nullable=true, length=50)
      */
     protected $dLastname;
     /**
      * @var string
-     * @ORM\Column(name="dEmail", type="varchar", nullable=true, length=255)
+     * @ORM\Column(name="dEmail", type="string", nullable=true, length=255)
      * @Assert\Email(
      *  message = "The email '{{ value }}' is not a valid email.",
      *  checkMX = true
