@@ -1,0 +1,4 @@
+app_create, _read, _update, _delete:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix:   /create, /read, /update, /delete
+
