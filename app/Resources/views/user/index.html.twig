@@ -19,7 +19,7 @@
         {% for user in users %}
             <tr>
                 <td><a href="{{ path('crud_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>{{ user.githubid }}</td>
+                <td>{{ user.github_id }}</td>
                 <td>{{ user.dLogin }}</td>
                 <td>{{ user.dFirstname }}</td>
                 <td>{{ user.dLastname }}</td>
