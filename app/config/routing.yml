@@ -2,10 +2,6 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
-# pour Dolibarr
-app_api:
-    resource: "@AppBundle/Controller/Api"
-    type:     annotation
 #hwi_oauth
 #hwi_oauth_security:
 #    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
