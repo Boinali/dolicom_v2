@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity\customer
+ * @ORM\Entity\Api
  * @ORM\Table(name="llx_user")
  */
 class dolibUser
