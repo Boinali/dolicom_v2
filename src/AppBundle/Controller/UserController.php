@@ -132,7 +132,7 @@ class UserController extends Controller
      */
     public function getUsersAction(Request $request)
     {
-        $places = $this->get('doctrine.orm.entity_manager')
+        $Users = $this->get('doctrine.orm.entity_manager')
             ->getRepository('AppBundle:User')
             ->findAll();
         /* @var $Users User[] */
