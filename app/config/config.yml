@@ -99,9 +99,9 @@ doctrine:
                 connection: customer
                 mappings:
                     AppBundle:
-#                        type:     "annotation"
-#                        dir:      "Entity/Api/"
-#                        prefix:   "App\Bundle\Entity\Api"
+                        type:     "annotation"
+                        dir:      "Entity/Api/"
+                        prefix:   "App\Bundle\Entity\Api"
 #                    AcmeCustomerBundle: ~
 
 
