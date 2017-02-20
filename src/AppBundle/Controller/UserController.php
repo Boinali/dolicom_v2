@@ -133,9 +133,9 @@ class UserController extends Controller
     public function getUsersAction(Request $request)
     {
         return new JsonResponse([
-            new User("Tour Eiffel", "5 Avenue Anatole France, 75007 Paris"),
-            new User("Mont-Saint-Michel", "50170 Le Mont-Saint-Michel"),
-            new User("Château de Versailles", "Place d'Armes, 78000 Versailles"),
+            new User("Tour Eiffel"),
+            new User("Mont-Saint-Michel"),
+            new User("Château de Versailles"),
         ]);
     }
 }
