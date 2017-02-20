@@ -30,12 +30,12 @@ class dolibUser
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    protected $rowid;
 
     /**
      * @return integer
      */
-    public function getId()
+    public function getRowId()
     {
         return $this->id;
     }
