@@ -8,7 +8,7 @@
 
 namespace AppBundle\Entity\Api;
 
-//use FOS\UserBundle\Entity\Api\dolibUser as BaseUser;
+use FOS\UserBundle\Entity\Api\dolibUser as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity\Api
  * @ORM\Table(name="llx_user")
  */
-class dolibUser
+class dolibUser extends BaseUser
 {
     public function __construct()
     {
