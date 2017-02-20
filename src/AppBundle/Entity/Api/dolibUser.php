@@ -26,7 +26,7 @@ class dolibUser
 
 
     /**
-     * @ORM\Rowid
+     * @ORM\rowid
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -37,6 +37,6 @@ class dolibUser
      */
     public function getRowId()
     {
-        return $this->id;
+        return $this->rowid;
     }
 }
