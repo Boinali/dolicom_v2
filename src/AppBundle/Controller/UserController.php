@@ -130,12 +130,23 @@ class UserController extends Controller
      * @Route("/users", name="users_list")
      * @Method({"GET"})
      */
-    public function getUsersAction(Request $request, User $user)
+    public function getUsersAction(Request $request)
     {
-        return new JsonResponse([
-            new User("Toto"),
-            new User("Mont"),
-            new User("Château"),
-        ]);
+        $places = $this->get('doctrine.orm.entity_manager')
+            ->getRepository('AppBundle:User')
+            ->findAll();
+        /* @var $Users User[] */
+
+        $formatted = [];
+        foreach ($Users as $user) {
+            $formatted[] = [
+                'id' => $user->getId(),
+                'dLogin' => $user->getDLogin(),
+                'dEmail' => $user->getDEmail(),
+            ];
+        }
+
+        return new JsonResponse($formatted);
+
     }
 }
