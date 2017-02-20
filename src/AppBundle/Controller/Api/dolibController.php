@@ -43,6 +43,6 @@ class dolibController extends Controller
 
     public function getAllUsers()
     {
-        return new Response('Hello World');
+        return new Response('http://dolibarr.localdomain/api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1');
     }
 }
