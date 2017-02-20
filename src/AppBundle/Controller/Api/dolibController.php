@@ -8,7 +8,7 @@
 
 namespace AppBundle\Controller\Api;
 
-use AppBundle\Entity\Api\dolibUser;
+use AppBundle\Entity\Api;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
