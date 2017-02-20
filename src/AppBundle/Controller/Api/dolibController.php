@@ -45,7 +45,7 @@ class dolibController extends Controller
     {
 
         $users = $this->get('doctrine.orm.customer_entity_manager')
-            ->getRepository('AppBundle:')
+            ->getRepository('AppBundle:../')
             ->findAll();
         /* @var $users User[] */
 
