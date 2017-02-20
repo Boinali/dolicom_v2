@@ -37,7 +37,7 @@ class dolibController extends Controller
 
 
     /**
-     * @Route("/api/programmers, name = dolib_users")
+     * @Route("/api/programmers", "name = dolib_users")
      * @Method("GET")
      */
 
