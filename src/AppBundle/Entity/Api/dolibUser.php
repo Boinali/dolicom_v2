@@ -6,14 +6,14 @@
  * Time: 15:34
  */
 
-namespace AppBundle\Entity;
+namespace AppBundle\Entity\Api;
 
 //use FOS\UserBundle\Entity\Api\dolibUser as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity\Api
+ * @ORM\Entity
  * @ORM\Table(name="llx_user")
  */
 class dolibUser
