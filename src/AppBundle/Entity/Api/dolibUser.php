@@ -26,7 +26,7 @@ class dolibUser
 
 
     /**
-     * @ORM\rowid
+     * @ORM\Rowid
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
