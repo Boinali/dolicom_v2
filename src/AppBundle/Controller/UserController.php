@@ -132,13 +132,13 @@ class UserController extends Controller
      */
     public function getUsersAction(Request $request)
     {
-        $Users = $this->get('doctrine.orm.entity_manager')
+        $users = $this->get('doctrine.orm.entity_manager')
             ->getRepository('AppBundle:User')
             ->findAll();
-        /* @var $Users User[] */
+        /* @var $users User[] */
 
         $formatted = [];
-        foreach ($Users as $user) {
+        foreach ($users as $user) {
             $formatted[] = [
                 'id' => $user->getId(),
                 'dLogin' => $user->getDLogin(),
