@@ -90,18 +90,18 @@ doctrine:
                 mappings:
                     AppBundle:
 #                    AcmeStoreBundle: ~
-                        type:     "annotation"
+#                        type:     "annotation"
                           # The directory for entity (relative to bundle path)
-                        dir:      "Entity/"
+#                        dir:      "Entity/"
                           #the prefix
-                        prefix:   "App\Bundle\Entity"
+#                        prefix:   "App\Bundle\Entity\User"
             customer:
                 connection: customer
                 mappings:
                     AppBundle:
                         type:     "annotation"
                         dir:      "Entity/Api/"
-                        prefix:   "App\Bundle\Entity\Api"
+                        prefix:   "App\Bundle\Entity\Api\dolibUser"
 #                    AcmeCustomerBundle: ~
 
 
