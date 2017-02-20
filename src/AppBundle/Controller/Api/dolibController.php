@@ -37,7 +37,7 @@ class dolibController extends Controller
 
 
     /**
-     * @Route("/api/programmers")
+     * @Route("/api/programmers, name = dolib_users")
      * @Method("GET")
      */
 
@@ -45,7 +45,7 @@ class dolibController extends Controller
     {
 
         $users = $this->get('doctrine.orm.customer_entity_manager')
-            ->getRepository('AppBundle:')
+            ->getRepository('AppBundle:dolibUser')
             ->findAll();
         /* @var $users User[] */
 
