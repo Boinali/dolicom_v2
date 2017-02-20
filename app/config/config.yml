@@ -67,7 +67,7 @@ doctrine:
                 port:     '%database_port%'
                 dbname:   symfony
                 user:     root
-                password: Dc6'
+                password: Dc64
                 charset:  UTF8
             customer:
                 driver:   pdo_mysql
