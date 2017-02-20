@@ -92,9 +92,9 @@ doctrine:
 #                    AcmeStoreBundle: ~
                         type:     "annotation"
                           # The directory for entity (relative to bundle path)
-                          dir:      "Entity/User"
+                        dir:      "Entity/User"
                           #the prefix
-                          prefix:   "App\Bundle\Entity\User"
+                        prefix:   "App\Bundle\Entity\User"
             customer:
                 connection: customer
                 mappings:
