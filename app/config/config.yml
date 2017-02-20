@@ -100,7 +100,7 @@ doctrine:
                 mappings:
                     AppBundle:
                         type:     "annotation"
-                        dir:      "Entity/Api/dolibUser"
+                        dir:      "Entity/Api/"
                         prefix:   "App\Bundle\Entity\Api\dolibUser"
 #                    AcmeCustomerBundle: ~
 
