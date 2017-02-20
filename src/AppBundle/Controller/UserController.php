@@ -128,10 +128,10 @@ class UserController extends Controller
 
     // API rest
     /**
-     * @Route("/places", name="places_list")
+     * @Route("/users", name="users_list")
      * @Method({"GET"})
      */
-    public function getPlacesAction(Request $request)
+    public function getUsersAction(Request $request)
     {
         return new JsonResponse([
             new Place("Tour Eiffel", "5 Avenue Anatole France, 75007 Paris"),
