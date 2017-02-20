@@ -130,7 +130,7 @@ class UserController extends Controller
      * @Route("/users", name="users_list")
      * @Method({"GET"})
      */
-    public function getUsersAction(Request $request)
+    public function getUsersAction(Request $request, User $user)
     {
         return new JsonResponse([
             new User("Toto"),
