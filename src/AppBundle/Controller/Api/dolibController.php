@@ -6,7 +6,7 @@
  * Time: 15:34
  */
 
-//namespace AppBundle\Controller\Api;
+namespace AppBundle\Controller\Api;
 
 use AppBundle\Entity\Api\dolibUser;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
