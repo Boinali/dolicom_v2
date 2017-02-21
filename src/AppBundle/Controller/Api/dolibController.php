@@ -31,7 +31,7 @@ class dolibController extends Controller
         $request = Request::createFromGlobals();
         $request->create('http://dolibarr.localdomain/api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1', 'GET');
 
-        $response =  new Response(json_encode(array($request)));
+        $response =  new Response(json_encode($request));
         $response->headers->set('Content-Type','application/json');
 
         return $response;
