@@ -149,8 +149,11 @@ easy_admin:
 
 #buzz_bundle
 buzz:
+     listners:
+         token: app_client.buzz.listner.token #mettre token
      browsers:
         dolibarr:
             client: curl
             host: http://dolibarr.localdomain
+            listners: [ token ]
 #            api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1
