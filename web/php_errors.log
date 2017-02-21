@@ -4,3 +4,4 @@
 [20-Feb-2017 11:30:59 Europe/Berlin] PHP Fatal error:  Class 'AppBundle\Controller\Place' not found in /var/www/dolicom_v2/src/AppBundle/Controller/UserController.php on line 136
 [20-Feb-2017 15:31:39 Europe/Berlin] PHP Fatal error:  Class 'AppBundle\Controller\Response' not found in /var/www/dolicom_v2/src/AppBundle/Controller/UserController.php on line 159
 [21-Feb-2017 11:18:48 Europe/Berlin] PHP Fatal error:  Call to undefined function AppBundle\Controller\Api\Response() in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 31
+[21-Feb-2017 15:13:41 Europe/Berlin] PHP Fatal error:  Class 'Buzz\Bundle\BuzzBundle\BuzzBundle' not found in /var/www/dolicom_v2/app/AppKernel.php on line 23

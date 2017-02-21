@@ -25,7 +25,7 @@
         "willdurand/propel-typehintable-behavior": "^1.0",
         "javiereguiluz/easyadmin-bundle": "^1.16",
         "hwi/oauth-bundle": "^0.5.3",
-        "sensio/buzz-bundle": "dev-master"
+        "juliendidier/buzz-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c0ef30714b79a16022cacb7102c09b09",
+    "content-hash": "8b0cf79d88695c3830c058a607673be9",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1221,6 +1221,46 @@
             "time": "2014-01-12T16:20:24+00:00"
         },
         {
+            "name": "juliendidier/buzz-bundle",
+            "version": "dev-master",
+            "target-dir": "Buzz/Bundle/BuzzBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/juliendidier/BuzzBundle.git",
+                "reference": "d430dbd99b73bf052d613fc62ae1f8388e7fc3f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/juliendidier/BuzzBundle/zipball/d430dbd99b73bf052d613fc62ae1f8388e7fc3f6",
+                "reference": "d430dbd99b73bf052d613fc62ae1f8388e7fc3f6",
+                "shasum": ""
+            },
+            "require": {
+                "kriswallsmith/buzz": "~0.7",
+                "php": ">=5.3.2",
+                "symfony/symfony": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Buzz\\Bundle\\BuzzBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julien DIDIER",
+                    "email": "julien@jdidier.net",
+                    "homepage": "http://jdidier.net"
+                }
+            ],
+            "description": "A Symfony2 Bundle for Buzz library integration",
+            "time": "2013-11-04 11:28:11"
+        },
+        {
             "name": "kriswallsmith/buzz",
             "version": "v0.15",
             "source": {
@@ -1663,54 +1703,6 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
-        },
-        {
-            "name": "sensio/buzz-bundle",
-            "version": "dev-master",
-            "target-dir": "Sensio/Bundle/BuzzBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sensiolabs/SensioBuzzBundle.git",
-                "reference": "ad7c722f755471b80f5c9c7dd703b2975f8a518b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioBuzzBundle/zipball/ad7c722f755471b80f5c9c7dd703b2975f8a518b",
-                "reference": "ad7c722f755471b80f5c9c7dd703b2975f8a518b",
-                "shasum": ""
-            },
-            "require": {
-                "kriswallsmith/buzz": "> 0.6",
-                "php": ">=5.3.2"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Sensio\\Bundle\\BuzzBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marc Weistroff",
-                    "email": "marc.weistroff@sensio.com"
-                }
-            ],
-            "description": "Bundle around the Buzz HTTP client",
-            "homepage": "https://github.com/sensio/SensioBuzzBundle",
-            "keywords": [
-                "buzz",
-                "http client"
-            ],
-            "time": "2016-03-15 10:06:41"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2966,7 +2958,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sensio/buzz-bundle": 20
+        "juliendidier/buzz-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
