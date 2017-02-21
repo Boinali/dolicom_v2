@@ -137,7 +137,7 @@ class User extends BaseUser
     public function setDLogin($dLogin)
     {
         $this->dLogin = $dLogin;
-        return $this;
+//        return $this;
     }
     /**
      * @return string
@@ -153,7 +153,7 @@ class User extends BaseUser
     public function setDMDP($dMDP)
     {
         $this->dMDP = $dMDP;
-        return $this;
+//        return $this;
     }
     /**
      * @return string
@@ -169,7 +169,7 @@ class User extends BaseUser
     public function setDFirstname($dFirstname)
     {
         $this->dFirstname = $dFirstname;
-        return $this;
+//        return $this;
     }
 
     /**
@@ -186,7 +186,7 @@ class User extends BaseUser
     public function setDLastname($dLastname)
     {
         $this->dLastname = $dLastname;
-        return $this;
+//        return $this;
     }
 
     /**
@@ -203,6 +203,6 @@ class User extends BaseUser
     public function setDEmail($dEmail)
     {
         $this->dEmail = $dEmail;
-        return $this;
+//        return $this;
     }
 }

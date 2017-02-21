@@ -20,17 +20,72 @@ class dolibUser
 {
 
     /**
-     * @ORM\rowid
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @var int
+     * @ORM\Column(name="rowid")
+     *
      */
     protected $rowid;
 
     /**
-     * @return integer
+     * @var string
+     * @ORM\Column(name="email")
+     *
      */
-    public function getRowId()
+    protected $email;
+    /**
+     * @var string
+     * @ORM\Column(name="login")
+     *
+     */
+    protected $login;
+
+    /**
+     * @return string
+     */
+    public function getRowid()
     {
         return $this->rowid;
     }
+
+    /**
+     * @param int $rowid
+     */
+    public function setRowid($rowid)
+    {
+        $this->rowid = $rowid;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param string $login
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+
 }
