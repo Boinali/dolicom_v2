@@ -20,21 +20,23 @@ class dolibUser
 {
 
     /**
-     * @var int
-     * @ORM\Column(name="rowid")
+     * @var integer $rowid
+     * @ORM\Id
+     * @ORM\Column(name="rowid", type="integer", nullable=false)
      *
+     *@ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $rowid;
 
     /**
-     * @var string
-     * @ORM\Column(name="email")
+     * @var string $email
+     * @ORM\Column(name="email", type="integer", nullable=true)
      *
      */
     protected $email;
     /**
-     * @var string
-     * @ORM\Column(name="login")
+     * @var string $login
+     * @ORM\Column(name="login", type="integer", nullable=false)
      *
      */
     protected $login;
