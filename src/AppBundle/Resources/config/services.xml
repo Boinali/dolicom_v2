@@ -1,6 +1,6 @@
 
 <services>
-    <service id="app_client.buzz.listener.token" class="AppBundle\Buzz\Listener\TokenListener">
+    <service id="app_client.buzz.listener.token" class="AppBundle\Buzz\Listener\TokenListener\TokenListener">
         <argument>%api_key%</argument>
     </service>
 </services>
