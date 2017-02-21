@@ -145,3 +145,11 @@ easy_admin:
 #            scope:               "user:n.boinali@intech-so.fr,public_repo"
 #            options:
 #                csrf: true
+
+
+#buzz_bundle
+buzz:
+    browsers:
+        dolibarr:
+            client: curl
+            host: http://dolibarr.localdomain/api/index.php/user/%7Bn0%7D?api_key=712f3b895ada9274714a881c2859b617&id=1

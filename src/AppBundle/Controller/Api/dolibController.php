@@ -13,6 +13,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use Buzz\Browser;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -26,8 +28,13 @@ class dolibController extends Controller
      * @Method("GET")
      */
 
-    public function getAllUsers()
+    public function getUser()
     {
-        return ("work in progress ...");
+        $buzz = $this->container->get('buzz');
+        $browser = $buzz->getBrowser('dolibarr');
+        $response = $browser->get('/');
+
+        echo $browser->getLastRequest()."\n";
+        echo $response;
     }
 }
