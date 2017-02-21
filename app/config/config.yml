@@ -150,10 +150,10 @@ easy_admin:
 #buzz_bundle
 buzz:
      listeners:
-         token: app_client.buzz.listener.token #mettre token
+#         token: app_client.buzz.listener.token #mettre token
      browsers:
         dolibarr:
             client: curl
-            host: http://dolibarr.localdomainapi/index.php/user/{n0}?
-            listeners: [ token ]
+            host: http://dolibarr.localdomainapi/index.php/user/{n0}?api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1
+#            listeners: [ api_key ]
 #            api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1
