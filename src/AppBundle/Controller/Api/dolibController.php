@@ -28,6 +28,6 @@ class dolibController extends Controller
 
     public function getAllUsers(Request $request)
     {
-        return null;
+        return ("work in progress ...");
     }
 }
