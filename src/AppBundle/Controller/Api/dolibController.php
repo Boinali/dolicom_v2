@@ -26,8 +26,8 @@ class dolibController extends Controller
      * @Method("GET")
      */
 
-    public function getAllUsers(Request $request)
+    public function getAllUsers()
     {
-        return Response("work in progress ...");
+        return ("work in progress ...");
     }
 }
