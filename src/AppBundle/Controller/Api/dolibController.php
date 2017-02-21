@@ -30,12 +30,17 @@ class dolibController extends Controller
 
     public function getUser()
     {
-        $buzz = $this->container->get('buzz');
-//        var_dump('here');die();
-        $browser = $buzz->getBrowser('dolibarr');
-        $response = $browser->get(' ');
+        $browser = new Buzz\Browser();
+        $response = $browser->get('http://dolibarr.localdomain/api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1');
 
         echo $browser->getLastRequest()."\n";
         echo $response;
+//        $buzz = $this->container->get('buzz');
+////        var_dump('here');die();
+//        $browser = $buzz->getBrowser('dolibarr');
+//        $response = $browser->get(' ');
+//
+//        echo $browser->getLastRequest()."\n";
+//        echo $response;
     }
 }
