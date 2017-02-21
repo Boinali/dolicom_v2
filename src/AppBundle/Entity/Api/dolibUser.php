@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity\(repositoryClass="AppBundle\Entity\Api")
  * @ORM\Table(name="llx_user")
  */
-var_dump('toto'); die();
+
 class dolibUser
 {
     /**
