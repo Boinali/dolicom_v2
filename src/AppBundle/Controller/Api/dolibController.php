@@ -28,9 +28,9 @@ class dolibController extends Controller
 
     public function getAllUsers()
     {
-        $request = new Request();
-        $request->create('http://dolibarr.localdomain/api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1', 'GET');
-
-        return new Response($request);
+        $request = Request::createFromGlobals();
+//        $request->create('http://dolibarr.localdomain/api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1', 'GET');
+        $login = $request->get('login');
+        return new Response($login);
     }
 }
