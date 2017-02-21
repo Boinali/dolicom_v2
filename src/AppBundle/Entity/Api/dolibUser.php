@@ -13,17 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity\Api
+ * @ORM\Entity\(repositoryClass="AppBundle\Entity\Api")
  * @ORM\Table(name="llx_user")
  */
 class dolibUser
 {
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
-
 
     /**
      * @ORM\rowid
