@@ -43,20 +43,9 @@ class dolibController extends Controller
 
     public function getAllUsers()
     {
+        $request = new Request();
+        $request->create('http://dolibarr.localdomain/api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1');
 
-        $users = $this->get('doctrine.orm.customer_entity_manager')
-            ->getRepository('AppBundle:dolibUser')
-            ->findAll();
-        /* @var $users User[] */
-
-        $formatted = [];
-        foreach ($users as $user) {
-            $formatted[] = [
-                'rowid' => $user->getRowId(),
-            ];
-        }
-
-        return new JsonResponse($formatted);
-
+        return new Response($request);
     }
 }
