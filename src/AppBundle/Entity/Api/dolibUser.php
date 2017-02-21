@@ -28,66 +28,6 @@ class dolibUser
      */
     protected $rowid;
 
-    /**
-     * @var string $email
-     * @ORM\Column(name="email", type="string", nullable=true)
-     *
-     */
-    protected $email;
-    /**
-     * @var string $login
-     * @ORM\Column(name="login", type="string", nullable=false)
-     *
-     */
-    protected $login;
-
-    /**
-     * @return string
-     */
-    public function getRowid()
-    {
-        return $this->rowid;
-    }
-
-    /**
-     * @param int $rowid
-     */
-    public function setRowid($rowid)
-    {
-        $this->rowid = $rowid;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLogin()
-    {
-        return $this->login;
-    }
-
-    /**
-     * @param string $login
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
 
 
 }
