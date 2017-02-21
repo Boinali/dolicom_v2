@@ -150,7 +150,7 @@ easy_admin:
 #buzz_bundle
 buzz:
      listeners:
-         token: app_client.buzz.listner.token #mettre token
+         token: app_client.buzz.listener.token #mettre token
      browsers:
         dolibarr:
             client: curl
