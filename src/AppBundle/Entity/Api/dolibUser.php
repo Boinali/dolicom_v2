@@ -20,23 +20,23 @@ use Symfony\Component\Validator\Constraints as Assert;
 class dolibUser
 {
     /**
-     * @var integer $rowid
+     * @var int $rowid
      * @ORM\Id
-     * @ORM\Column(name="rowid", type="integer", nullable=false)
+     * @ORM\Column(name="rowid", type="int", nullable=false)
      *
-     *@ORM\GeneratedValue(strategy="IDENTITY")
+     *@ORM\GeneratedValue(strategy="AUTO")
      */
     protected $rowid;
 
     /**
      * @var string $email
-     * @ORM\Column(name="email", type="integer", nullable=true)
+     * @ORM\Column(name="email", type="string", nullable=true)
      *
      */
     protected $email;
     /**
      * @var string $login
-     * @ORM\Column(name="login", type="integer", nullable=false)
+     * @ORM\Column(name="login", type="string", nullable=false)
      *
      */
     protected $login;
