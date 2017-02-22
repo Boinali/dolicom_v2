@@ -34,16 +34,16 @@ class dolibController extends Controller
     public function getUserById(Request $request)
     {
         $form = $this->createFormBuilder()
-            ->add('id', TextType::class)
+            ->add('Dolibarr_Id', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'checker'))
             ->getForm();
 
         $form->handleRequest($request);
-        $id = 0;
+        $id = null;
 
         if ($form->isSubmitted() && $form->isValid()) {
 //            $data = $form->getData();
-            $id = $form->get('id')->getData();
+            $id = $form->get('Dolibarr_Id')->getData();
 
     }
         var_dump($id);
