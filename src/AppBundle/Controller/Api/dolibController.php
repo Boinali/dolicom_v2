@@ -67,7 +67,7 @@ class dolibController extends Controller
 //            $data = $form->getData();
 //        }
 
-        return $this->render('form_find_user.html.twig', array(
+        return $this->render('list_dolib_users.html.twig', array(
             'id' => $id,
             'form' => $form->createView(),
         ));
