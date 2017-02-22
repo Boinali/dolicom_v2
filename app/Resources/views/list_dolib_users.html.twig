@@ -23,8 +23,8 @@
                     {#{% endif %}#}
                     {{ response.id|default('') }}
                 </td>
-                <td>{{ response.login}}</td>
-                <td>{{ response.email }}</td>
+                <td>{{ response.login|default('')}}</td>
+                <td>{{ response.email|default('') }}</td>
             </tr>
         </table>
         <br>
