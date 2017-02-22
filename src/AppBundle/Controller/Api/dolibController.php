@@ -39,13 +39,13 @@ class dolibController extends Controller
             ->getForm();
 
         $form->handleRequest($request);
-        $id = null;
 
         if ($form->isSubmitted() && $form->isValid()) {
 //            $data = $form->getData();
             $id = $form->get('Dolibarr_Id')->getData();
 
-
+    }
+        else{$id = 1;}
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
@@ -73,7 +73,6 @@ class dolibController extends Controller
         );
         }
 
-    }
     }
 
 }
