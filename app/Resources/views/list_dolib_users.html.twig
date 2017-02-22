@@ -2,9 +2,29 @@
 <html>
     <head>
         <title>Gestion des utilisateurs Dolibarr</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ web/asset('css/test.css') }}" type="text/css" />
+        {% endblock %}
     </head>
     <body>
         <h1>Gestion des utilisateurs Dolibarr</h1>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Email</th>
+            </tr>
+
+            <tr>
+                <td>ex_Id</td>
+                <td>ex_Log</td>
+                <td>ex_Em</td>
+            </tr>
+        </table>
+
+
         <p>{{ dump(response.content)   }}</p>
+
     </body>
 </html>
