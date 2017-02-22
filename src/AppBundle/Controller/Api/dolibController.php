@@ -56,8 +56,7 @@ class dolibController extends Controller
         $mp = 112;
         $isArive = $response->getStatusCode();
         if($isArive != 200){
-            $browser->get('/');
-            $response = null;
+            $response = $browser->get('/');
             $content = null;
             return $this->render('list_dolib_users.html.twig',
                 array(
