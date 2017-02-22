@@ -19,6 +19,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 class dolibController extends Controller
 {
@@ -43,5 +47,26 @@ class dolibController extends Controller
             array('response' => $content)
         );
 
+    }
+
+    public function findByID(Request $request)
+    {
+        $defaultData = array('message' => 'Type your message here');
+        $form = $this->createFormBuilder($defaultData)
+            ->add('id', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'checker'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $data = $form->getData();
+//        }
+
+        return $this->render('list_dolib_users.html.twig', array(
+            'form' => $form->createView(),
+        ));
+
+        // ... render the form
     }
 }
