@@ -60,7 +60,7 @@ class dolibController extends Controller
             $content = null;
             return $this->render('list_dolib_users.html.twig',
                 array(
-                    'response' => $content,
+                    'response' => $content->setId(),
                     'form' => $form->createView(),)
             );
         }

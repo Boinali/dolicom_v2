@@ -17,13 +17,12 @@
             </tr>
 
             <tr>
-                <td>{{ response.id }}</td>
+                <td>{{% if response.id is defined %}}</td>
                 <td>{{ response.login}}</td>
                 <td>{{ response.email }}</td>
             </tr>
         </table>
         <br>
-        {{ id }}
         {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_end(form) }}
