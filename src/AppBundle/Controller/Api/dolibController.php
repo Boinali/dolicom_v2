@@ -46,16 +46,15 @@ class dolibController extends Controller
             $id = $form->get('id')->getData();
 
     }
-        var_dump($id);
-
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
         $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
+        var_dump($response);die();
         // verification de la requete
         $mp = 112;
         $isArive = $response->getStatusCode();
-        if($isArive != 200){var_dump('here');die();
+        if($isArive != 200){
             $response = $browser->get('/');
             $content = null;
             return $this->render('list_dolib_users.html.twig',
