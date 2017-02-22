@@ -17,7 +17,12 @@
             </tr>
 
             <tr>
-                <td>{{% if response.id is defined %}}</td>
+                <td>
+                    {#{% if response.id is defined %}#}
+                        {#{{ response.id }}#}
+                    {#{% endif %}#}
+                    {{ response.id|default('') }}
+                </td>
                 <td>{{ response.login}}</td>
                 <td>{{ response.email }}</td>
             </tr>
