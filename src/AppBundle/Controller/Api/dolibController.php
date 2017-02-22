@@ -37,9 +37,9 @@ class dolibController extends Controller
 
 //        dump($browser->getLastRequest());
         dump($response);
-
+        $content = json_decode($response);
         return $this->render('list_dolib_users.html.twig',
-            array('response' => $response)
+            array('response' => $content)
         );
 
     }
