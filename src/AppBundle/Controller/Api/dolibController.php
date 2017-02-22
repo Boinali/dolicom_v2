@@ -39,7 +39,7 @@ class dolibController extends Controller
 //        dump($response);
 
         return $this->render('list_dolib_users.html.twig',
-            array('response' => json_encode($response))
+            array('response' => $response)
         );
 
     }
