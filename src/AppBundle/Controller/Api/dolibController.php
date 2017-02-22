@@ -54,16 +54,16 @@ class dolibController extends Controller
         $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
         // verification de la requete
         $mp = 112;
-        $isArive = $response->getStatusCode();var_dump($isArive,$mp);
-//        if($response->getStatusCode() != 200)
-//        {
-//            $content = null;
-//            return $this->render('list_dolib_users.html.twig',
-//                array(
-//                    'response' => $content,
-//                    'form' => $form->createView(),)
-//            );
-//        }
+        $isArive = $response->getStatusCode();
+        if($isArive != 200){
+            $response = null;
+            $content = null;
+            return $this->render('list_dolib_users.html.twig',
+                array(
+                    'response' => $content,
+                    'form' => $form->createView(),)
+            );
+        }
 //        dump($browser->getLastRequest());
 //        dump($response);
         $content = json_decode($response->getContent());
