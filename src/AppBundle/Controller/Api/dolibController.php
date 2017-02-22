@@ -39,7 +39,7 @@ class dolibController extends Controller
             ->getForm();
 
         $form->handleRequest($request);
-        $id = 0;
+        $id = 1;
 
         if ($form->isSubmitted() && $form->isValid()) {
 //            $data = $form->getData();
