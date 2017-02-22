@@ -21,10 +21,10 @@
                     {#{% if response.id is defined %}#}
                         {#{{ response.id }}#}
                     {#{% endif %}#}
-                    {{ response.id|default('') }}
+                    {{ response.id|default('-') }}
                 </td>
-                <td>{{ response.login|default('')}}</td>
-                <td>{{ response.email|default('') }}</td>
+                <td>{{ response.login|default('-')}}</td>
+                <td>{{ response.email|default('-') }}</td>
             </tr>
         </table>
         <br>
