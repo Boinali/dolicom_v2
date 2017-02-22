@@ -33,6 +33,9 @@ class dolibController extends Controller
 
     public function getUserById(Request $request)
     {
+        error_reporting(E_ALL);
+        ini_set('display_errors', false);
+
         $form = $this->createFormBuilder()
             ->add('id', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'checker'))
