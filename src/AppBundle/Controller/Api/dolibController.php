@@ -52,7 +52,7 @@ class dolibController extends Controller
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
         $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
-
+        $toto = $response->getStatusCode();var_dump($toto);
 //        dump($browser->getLastRequest());
         dump($response);
         $content = json_decode($response->getContent());
