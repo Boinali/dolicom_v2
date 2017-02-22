@@ -22,7 +22,16 @@
                 <td>ex_Em</td>
             </tr>
         </table>
+        <p><?php
 
+$hello = "Hi";
+
+echo "Inline $hello";
+// Outputs : Inline Hi
+
+$myVariable = "Hello {$hello}";
+echo $myVariable;
+// Outputs: "Hello Hi" ?></p>
         <p>{{ dump(response.content)   }}</p>
 
     </body>
