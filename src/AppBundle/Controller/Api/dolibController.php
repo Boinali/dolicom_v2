@@ -53,7 +53,8 @@ class dolibController extends Controller
         $browser = $buzz->getBrowser('dolibarr');
         $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
         // verification de la requete
-        $isArive = $response->getStatusCode();var_dump($isArive);
+        $mp = 112;
+        $isArive = $response->getStatusCode();var_dump($isArive,$mp);
 //        if($response->getStatusCode() != 200)
 //        {
 //            $content = null;
