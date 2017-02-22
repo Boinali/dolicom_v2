@@ -46,7 +46,7 @@ class dolibController extends Controller
             $id = $form->get('id')->getData();
 
     }
-        var_dump($id);die();
+        var_dump($id);
 
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
