@@ -28,11 +28,11 @@ class dolibController extends Controller
 {
 
     /**
-     * @Route("/api/programmers", name = "dolib_users")
+     * @Route("/api/users", name = "dolib_users")
      * @Method("GET")
      */
 
-    public function getUser(Request $request)
+    public function getUserById(Request $request)
     {
 
         $form = $this->createFormBuilder()
