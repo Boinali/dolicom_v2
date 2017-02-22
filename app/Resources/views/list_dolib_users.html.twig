@@ -7,21 +7,21 @@
         {% endblock %}
     </head>
     <body>
-        {#<h1>Gestion des utilisateurs Dolibarr</h1>#}
-        {#<h2>Utilisateur</h2>#}
-        {#<table>#}
-            {#<tr>#}
-                {#<th>Id</th>#}
-                {#<th>Login</th>#}
-                {#<th>Email</th>#}
-            {#</tr>#}
+        <h1>Gestion des utilisateurs Dolibarr</h1>
+        <h2>Utilisateur</h2>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Email</th>
+            </tr>
 
-            {#<tr>#}
-                {#<td>{{ response.id }}</td>#}
-                {#<td>{{ response.login}}</td>#}
-                {#<td>{{ response.email }}</td>#}
-            {#</tr>#}
-        {#</table>#}
+            <tr>
+                <td>{{ response.id }}</td>
+                <td>{{ response.login}}</td>
+                <td>{{ response.email }}</td>
+            </tr>
+        </table>
         <br>
 
         {{ form(form) }}
