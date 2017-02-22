@@ -51,7 +51,7 @@ class dolibController extends Controller
 
     public function findByID(Request $request)
     {
-        $defaultData = array('message' => 'Type your message here');
+        $defaultData = array('message' => 'Entrer un Id valid');
         $form = $this->createFormBuilder($defaultData)
             ->add('id', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'checker'))
@@ -59,9 +59,9 @@ class dolibController extends Controller
 
         $form->handleRequest($request);
 
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $data = $form->getData();
-//        }
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+        }
 
         return $this->render('list_dolib_users.html.twig', array(
             'form' => $form->createView(),
