@@ -28,7 +28,7 @@ class dolibController extends Controller
      * @Method("GET")
      */
 
-    public function getUser($id)
+    public function getUser()
     {
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
