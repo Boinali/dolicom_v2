@@ -49,14 +49,20 @@ class dolibController extends Controller
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
-        $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
-        var_dump($response);die();
+        $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');die();
         // verification de la requete
-        $mp = 112;
         $isArive = $response->getStatusCode();
         if($isArive != 200){
-            $response = $browser->get('/');
+            $response = null;
             $content = null;
+            return $this->render('list_dolib_users.html.twig',
+                array(
+                    'response' => $content,
+                    'form' => $form->createView(),)
+            );
+        }
+        else {
+            $content = json_decode($response->getContent());
             return $this->render('list_dolib_users.html.twig',
                 array(
                     'response' => $content,
@@ -65,13 +71,6 @@ class dolibController extends Controller
         }
 //        dump($browser->getLastRequest());
 //        dump($response);
-        $content = json_decode($response->getContent());
-        return $this->render('list_dolib_users.html.twig',
-            array(
-                'response' => $content,
-                'form' => $form->createView(),)
-        );
-
 
     }
 
