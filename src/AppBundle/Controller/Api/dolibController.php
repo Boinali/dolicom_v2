@@ -45,7 +45,6 @@ class dolibController extends Controller
             $id = $form->get('Dolibarr_Id')->getData();
 
     }
-        else{$id = 1;}
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
@@ -62,7 +61,7 @@ class dolibController extends Controller
                     'form' => $form->createView(),)
             );
         }
-        else{
+
 //        dump($browser->getLastRequest());
 //        dump($response);
         $content = json_decode($response->getContent());
@@ -71,7 +70,7 @@ class dolibController extends Controller
                 'response' => $content,
                 'form' => $form->createView(),)
         );
-        }
+
 
     }
 
