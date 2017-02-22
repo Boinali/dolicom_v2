@@ -58,10 +58,12 @@ class dolibController extends Controller
         if($isArive != 200){
             $response = null;
             $content = null;
+            $msg = "Erreur, cet Id n'existe pas";
             return $this->render('list_dolib_users.html.twig',
                 array(
                     'response' => $content,
-                    'form' => $form->createView(),)
+                    'form' => $form->createView(),
+                    'Erreur' => $msg,)
             );
         }
         else {
