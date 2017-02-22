@@ -49,7 +49,7 @@ class dolibController extends Controller
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
-        if(!$response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'')->isSuccessful()){
+        if($response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'')->isSuccessful()){
             die();
         }
         else{var_dump('toto');die();}
