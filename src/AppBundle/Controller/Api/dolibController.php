@@ -52,41 +52,26 @@ class dolibController extends Controller
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
         $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
-        $toto = $response->getStatusCode();var_dump($toto);
+        // verification de la requete
+        if($response->getStatusCode != 200)
+        {
+            $content = null;
+            return $this->render('list_dolib_users.html.twig',
+                array(
+                    'response' => $content,
+                    'form' => $form->createView(),)
+            );
+        }else{
 //        dump($browser->getLastRequest());
-        dump($response);
+//        dump($response);
         $content = json_decode($response->getContent());
         return $this->render('list_dolib_users.html.twig',
             array(
                 'response' => $content,
                 'form' => $form->createView(),)
         );
+        }
 
     }
 
-//    public function findByID(Request $request)
-//    {
-////        $defaultData = array('message' => 'Entrer un Id valid');
-//        $form = $this->createFormBuilder()
-//            ->add('id', TextType::class)
-//            ->add('save', SubmitType::class, array('label' => 'checker'))
-//            ->getForm();
-//
-//        $form->handleRequest($request);
-//        $id = 0;
-//
-//        if($form->isValid()){
-//            $id = $form->get('id')->getData();
-//        }
-////        if ($form->isSubmitted() && $form->isValid()) {
-////            $data = $form->getData();
-////        }
-//
-//        return $this->render('form_find_user.html.twig', array(
-//            'id' => $id,
-//            'form' => $form->createView(),
-//        ));
-//
-//        // ... render the form
-//    }
 }
