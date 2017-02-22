@@ -45,8 +45,6 @@ class dolibController extends Controller
 //            $data = $form->getData();
             $id = $form->get('Dolibarr_Id')->getData();
 
-    }
-        var_dump($id);
 
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
@@ -75,6 +73,7 @@ class dolibController extends Controller
         );
         }
 
+    }
     }
 
 }
