@@ -55,13 +55,15 @@ class dolibController extends Controller
         // verification de la requete
         if($response->getStatusCode() != 200)
         {
+            $response = null;
             $content = null;
             return $this->render('list_dolib_users.html.twig',
                 array(
                     'response' => $content,
                     'form' => $form->createView(),)
             );
-        }else{
+        }
+        else{
 //        dump($browser->getLastRequest());
 //        dump($response);
         $content = json_decode($response->getContent());
