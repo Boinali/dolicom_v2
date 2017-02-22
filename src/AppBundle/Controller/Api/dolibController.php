@@ -44,9 +44,9 @@ class dolibController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 //            $data = $form->getData();
             $id = $form->get('id')->getData();
-            var_dump($id);die();
-    }
 
+    }
+        var_dump($id);die();
 
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
