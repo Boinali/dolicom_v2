@@ -34,34 +34,34 @@ class dolibController extends Controller
     public function getUserById(Request $request)
     {
         $form = $this->createFormBuilder()
-            ->add('Dolibarr_Id', TextType::class)
+            ->add('id', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'checker'))
             ->getForm();
 
         $form->handleRequest($request);
-        $id = 1;
+        $id = 0;
+
         if ($form->isSubmitted() && $form->isValid()) {
 //            $data = $form->getData();
-            $id = $form->get('Dolibarr_Id')->getData();
+            $id = $form->get('id')->getData();
 
     }
+        var_dump($id);
+
         $buzz = $this->container->get('buzz');
 //        var_dump('here');die();
         $browser = $buzz->getBrowser('dolibarr');
         $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
-        var_dump($response);die();
         // verification de la requete
         if($response->getStatusCode() != 200)
         {
-            $response = null;
             $content = null;
             return $this->render('list_dolib_users.html.twig',
                 array(
                     'response' => $content,
                     'form' => $form->createView(),)
             );
-        }
-
+        }else{
 //        dump($browser->getLastRequest());
 //        dump($response);
         $content = json_decode($response->getContent());
@@ -70,7 +70,7 @@ class dolibController extends Controller
                 'response' => $content,
                 'form' => $form->createView(),)
         );
-
+        }
 
     }
 
