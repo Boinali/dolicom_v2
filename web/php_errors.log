@@ -5,3 +5,13 @@
 [20-Feb-2017 15:31:39 Europe/Berlin] PHP Fatal error:  Class 'AppBundle\Controller\Response' not found in /var/www/dolicom_v2/src/AppBundle/Controller/UserController.php on line 159
 [21-Feb-2017 11:18:48 Europe/Berlin] PHP Fatal error:  Call to undefined function AppBundle\Controller\Api\Response() in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 31
 [21-Feb-2017 15:13:41 Europe/Berlin] PHP Fatal error:  Class 'Buzz\Bundle\BuzzBundle\BuzzBundle' not found in /var/www/dolicom_v2/app/AppKernel.php on line 23
+[21-Feb-2017 17:07:50 Europe/Berlin] PHP Fatal error:  Class 'AppBundle\Controller\Api\Buzz\Browser' not found in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 33
+[21-Feb-2017 17:09:13 Europe/Berlin] PHP Fatal error:  Class 'AppBundle\Controller\Api\Buzz\Browser' not found in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 33
+[22-Feb-2017 10:53:54 Europe/Berlin] PHP Fatal error:  Cannot use object of type Buzz\Message\Response as array in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 42
+[22-Feb-2017 11:09:39 Europe/Berlin] PHP Fatal error:  Cannot use object of type Buzz\Message\Response as array in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 42
+[22-Feb-2017 11:10:31 Europe/Berlin] PHP Fatal error:  Cannot use object of type Buzz\Message\Response as array in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 42
+[22-Feb-2017 11:10:39 Europe/Berlin] PHP Fatal error:  Cannot use object of type Buzz\Message\Response as array in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 42
+[22-Feb-2017 13:35:01 Europe/Berlin] PHP Fatal error:  Call to undefined method Buzz\Message\Response::get() in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 42
+[22-Feb-2017 17:21:15 Europe/Berlin] PHP Fatal error:  Call to a member function getStatusCode() on boolean in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 56
+[22-Feb-2017 17:29:39 Europe/Berlin] PHP Fatal error:  Class Buzz\Bundle\BuzzBundle\Buzz\Listener\ExceptionListener contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Buzz\Listener\ListenerInterface::postSend) in /var/www/dolicom_v2/vendor/juliendidier/buzz-bundle/Buzz/Bundle/BuzzBundle/Buzz/Listener/ExceptionListener.php on line 23
+[22-Feb-2017 17:44:47 Europe/Berlin] PHP Fatal error:  Call to a member function setId() on null in /var/www/dolicom_v2/src/AppBundle/Controller/Api/dolibController.php on line 63
