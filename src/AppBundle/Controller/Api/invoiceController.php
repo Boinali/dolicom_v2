@@ -24,5 +24,13 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class invoiceController extends Controller
 {
+    /**
+     * @Route("/api/invoices", name = "dolib_invoices")
+     */
+     public function createInvoice()
+     {
+
+     }
+    // création invoices
 
 }
