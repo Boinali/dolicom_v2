@@ -53,11 +53,11 @@ class invoiceController extends Controller
 //               $invoiceContent["libelle"] = $libelle;
 
                // envoie de la requette -> creation facture
-//               $buzz = $this->container->get('buzz');
-//               $browser = $buzz->getBrowser('dolibarr');
-//               $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
-//               $isArive = $response->getStatusCode();
-              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
+               $buzz = $this->container->get('buzz');
+               $browser = $buzz->getBrowser('dolibarr');
+               $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617',$headers,$invoiceContent);
+               $isArive = $response->getStatusCode();
+//              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
 
                return $this->redirectToRoute('Succes');
           }
