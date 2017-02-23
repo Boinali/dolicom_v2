@@ -29,7 +29,9 @@ class invoiceController extends Controller
      */
      public function createInvoice()
      {
-
+          return $this->render('invoices.html.twig',
+               array()
+          );
      }
     // création invoices
 
