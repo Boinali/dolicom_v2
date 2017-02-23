@@ -47,31 +47,32 @@ class dolibController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $id = $form->get('id')->getData();
 
+            $buzz = $this->container->get('buzz');
+            $browser = $buzz->getBrowser('dolibarr');
+            $response = $browser->get('user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
+            $isArive = $response->getStatusCode();
+            if($isArive != 200){
+                $response = null;
+                $content = null;
+                $msg = "Erreur, cet Id n'existe pas";
+                return $this->render('list_dolib_users.html.twig',
+                    array(
+                        'response' => $content,
+                        'form' => $form->createView(),
+                        'Erreur' => $msg,)
+                );
+            }
+            else {
+                dump($response->getContent());
+                $content = json_decode($response->getContent());
+                return $this->render('list_dolib_users.html.twig',
+                    array(
+                        'response' => $content,
+                        'form' => $form->createView(),)
+                );
+            }
     }
-        $buzz = $this->container->get('buzz');
-        $browser = $buzz->getBrowser('dolibarr');
-        $response = $browser->get('user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
-        $isArive = $response->getStatusCode();
-        if($isArive != 200){
-            $response = null;
-            $content = null;
-            $msg = "Erreur, cet Id n'existe pas";
-            return $this->render('list_dolib_users.html.twig',
-                array(
-                    'response' => $content,
-                    'form' => $form->createView(),
-                    'Erreur' => $msg,)
-            );
-        }
-        else {
-            dump($response->getContent());
-            $content = json_decode($response->getContent());
-            return $this->render('list_dolib_users.html.twig',
-                array(
-                    'response' => $content,
-                    'form' => $form->createView(),)
-            );
-        }
+
 
     }
 
