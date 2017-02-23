@@ -68,6 +68,7 @@ class dolibController extends Controller
         }
         else {
             $content = json_decode($response->getContent());
+            dump($response);
             return $this->render('list_dolib_users.html.twig',
                 array(
                     'response' => $content,
@@ -75,7 +76,7 @@ class dolibController extends Controller
             );
         }
 //        dump($browser->getLastRequest());
-        dump($response);
+
 
     }
 
