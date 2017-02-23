@@ -33,8 +33,8 @@ class dolibController extends Controller
 
     public function getUserById(Request $request)
     {
-//        error_reporting(E_ALL);
-//        ini_set('display_errors', false);
+        error_reporting(E_ALL);
+        ini_set('display_errors', false);
 
         $form = $this->createFormBuilder()
             ->add('id', TextType::class)
@@ -45,34 +45,37 @@ class dolibController extends Controller
         $id = 1;
 
         if ($form->isSubmitted() && $form->isValid()) {
+//            $data = $form->getData();
             $id = $form->get('id')->getData();
 
-            $buzz = $this->container->get('buzz');
-            $browser = $buzz->getBrowser('dolibarr');
-            $response = $browser->get('user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
-            $isArive = $response->getStatusCode();
-            if($isArive != 200){
-                $response = null;
-                $content = null;
-                $msg = "Erreur, cet Id n'existe pas";
-                return $this->render('list_dolib_users.html.twig',
-                    array(
-                        'response' => $content,
-                        'form' => $form->createView(),
-                        'Erreur' => $msg,)
-                );
-            }
-            else {
-                dump($response->getContent());
-                $content = json_decode($response->getContent());
-                return $this->render('list_dolib_users.html.twig',
-                    array(
-                        'response' => $content,
-                        'form' => $form->createView(),)
-                );
-            }
     }
-
+        $buzz = $this->container->get('buzz');
+//        var_dump('here');die();
+        $browser = $buzz->getBrowser('dolibarr');
+        $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
+        // verification de la requete
+        $isArive = $response->getStatusCode();
+        if($isArive != 200){
+            $response = null;
+            $content = null;
+            $msg = "Erreur, cet Id n'existe pas";
+            return $this->render('list_dolib_users.html.twig',
+                array(
+                    'response' => $content,
+                    'form' => $form->createView(),
+                    'Erreur' => $msg,)
+            );
+        }
+        else {
+            $content = json_decode($response->getContent());
+            return $this->render('list_dolib_users.html.twig',
+                array(
+                    'response' => $content,
+                    'form' => $form->createView(),)
+            );
+        }
+//        dump($browser->getLastRequest());
+//        dump($response);
 
     }
 
