@@ -51,14 +51,14 @@ class invoiceController extends Controller
 
           if ($form->isSubmitted() && $form->isValid())
           {
-              $headers = ['Content-Type', 'application/json'];
+              $headers = ['Content-Type', ''];
                // recuperation des données Post
                $data = $form->getData();
 //               $libelle = $data->get('Libelle');
                $socid = $data['Client_Id'];
 
                $invoiceContent["socid"] = $socid;
-//               $invoiceContent = json_encode($invoiceContent);
+               $invoiceContent = json_encode($invoiceContent);
 //               $invoiceContent["libelle"] = $libelle;
                // envoie de la requette -> creation facture
                $buzz = $this->container->get('buzz');
