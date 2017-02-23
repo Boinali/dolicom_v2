@@ -69,8 +69,13 @@ class invoiceController extends Controller
               var_dump($response);die();
                $isArive = $response->getStatusCode();
 //              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
-
-               return $this->redirectToRoute('dolib_invoices');
+              return $this->render('invoices.html.twig',
+                  array(
+//                       'Libelle' => $libelle,
+                      'Client_Id' => $socid,
+                      'form' => $form->createView(),)
+              );
+//               return $this->redirectToRoute('dolib_invoices');
           }
 
           return $this->render('invoices.html.twig',
