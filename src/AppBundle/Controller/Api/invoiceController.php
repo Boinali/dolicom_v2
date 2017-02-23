@@ -13,6 +13,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Buzz\Browser;
+use Buzz\Client\ClientInterface;
+use Buzz\Client\FileGetContents;
+use Buzz\Listener\ListenerChain;
+use Buzz\Listener\ListenerInterface;
+use Buzz\Message\Factory\Factory;
+use Buzz\Message\Factory\FactoryInterface;
+use Buzz\Message\MessageInterface;
+use Buzz\Message\RequestInterface;
+use Buzz\Util\Url;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
