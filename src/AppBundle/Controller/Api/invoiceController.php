@@ -54,10 +54,8 @@ class invoiceController extends Controller
                // envoie de la requette -> creation facture
                $buzz = $this->container->get('buzz');
                $browser = $buzz->getBrowser('dolibarr');
-              var_dump($browser->headers);die();
-               $browser->setContent($invoiceContent);
                $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
-
+               var_dump($response);die();
                $isArive = $response->getStatusCode();
 
                return $this->redirectToRoute('Succes');
