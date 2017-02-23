@@ -51,7 +51,7 @@ class invoiceController extends Controller
                $invoiceContent["socid"] = $socid;
                $invoiceContent = json_encode($invoiceContent);
 //               $invoiceContent["libelle"] = $libelle;
-
+                var_dump($invoiceContent);
                // envoie de la requette -> creation facture
                $buzz = $this->container->get('buzz');
                $browser = $buzz->getBrowser('dolibarr');
