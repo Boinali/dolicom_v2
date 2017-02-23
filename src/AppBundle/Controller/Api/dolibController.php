@@ -58,10 +58,7 @@ class dolibController extends Controller
         if($isArive != 200){
             $response = null;
             $content = null;
-            $msg = "<div class=\"alert alert-danger alert-dismissable fade in\">
-                        <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>
-                        <strong>Attention!</strong> Cet Id utilisateur n'existe pas.
-                    </div>";
+            $msg = "Erreur, cet Id n'existe pas";
             return $this->render('list_dolib_users.html.twig',
                 array(
                     'response' => $content,
