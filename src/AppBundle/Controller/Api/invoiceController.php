@@ -60,12 +60,11 @@ class invoiceController extends Controller
                $invoiceContent["socid"] = $socid;
 //               $invoiceContent = json_encode($invoiceContent);
 //               $invoiceContent["libelle"] = $libelle;
-                var_dump($invoiceContent);
                // envoie de la requette -> creation facture
                $buzz = $this->container->get('buzz');
                $browser = $buzz->getBrowser('dolibarr');
-               $response = $browser->submit('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617',
-                   $invoiceContent,$method = RequestInterface::METHOD_POST,$headers);
+               $response = $browser->post('invoice/?api_key=712f3b895ada9274714a881c2859b617',
+                   $headers,$invoiceContent);
               var_dump($response);die();
                $isArive = $response->getStatusCode();
 //              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
