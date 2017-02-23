@@ -69,7 +69,7 @@ class invoiceController extends Controller
                $isArive = $response->getStatusCode();
 //              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
 
-               return $this->redirectToRoute('api/invoices');
+               return $this->redirectToRoute('http://dolicom_v2.localdomain/app_dev.php/api/invoices');
           }
 
           return $this->render('invoices.html.twig',
