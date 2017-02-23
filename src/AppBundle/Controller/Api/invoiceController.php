@@ -51,17 +51,11 @@ class invoiceController extends Controller
                $invoiceContent = json_encode($invoiceContent);
 //               $invoiceContent["libelle"] = $libelle;
 
-               $app->before(function (Request $request) {
-                    if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
-                         $data = json_decode($request->getContent(), true);
-                         $request->request->replace(is_array($data) ? $data : array());
-                    }
-               });
-
                // envoie de la requette -> creation facture
                $buzz = $this->container->get('buzz');
                $browser = $buzz->getBrowser('dolibarr');
-               $response = $browser->get('invoice/?api_key=712f3b895ada9274714a881c2859b617');
+               $browser->setContent($invoiceContent);
+               $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
 
                $isArive = $response->getStatusCode();
 
