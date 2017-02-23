@@ -43,7 +43,7 @@ class invoiceController extends Controller
           if ($form->isSubmitted() && $form->isValid())
           {
                // recuperation des données Post
-               $data = $form->getData();
+               $data = $form->getData();var_dump($data);die();
 //               $libelle = $data->get('Libelle');
                $socid = $data->get('Client_Id');
 
