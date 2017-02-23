@@ -66,6 +66,7 @@ class invoiceController extends Controller
                $browser = $buzz->getBrowser('dolibarr');
                $response = $browser->submit('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617',
                    $invoiceContent,$method = RequestInterface::METHOD_POST,$headers);
+              var_dump($response);die();
                $isArive = $response->getStatusCode();
 //              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
 
