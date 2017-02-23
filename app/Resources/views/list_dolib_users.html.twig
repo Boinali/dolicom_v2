@@ -17,7 +17,8 @@
             <div class="container">
                 <h1>Gestion des utilisateurs Dolibarr</h1>
                 <h2>Utilisateur</h2>
-                <table>
+                <div class="table-responsive">
+                <table class="table">
                     <tr>
                         <th>Id</th>
                         <th>Login</th>
@@ -40,6 +41,7 @@
                 {{ form_widget(form) }}
                 {{ form_end(form) }}
                 {#<p>{{ dump()   }}</p>#}
+                </div>
             </div>
         </div>
     </body>
