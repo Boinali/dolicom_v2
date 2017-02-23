@@ -58,7 +58,7 @@ class invoiceController extends Controller
                $socid = $data['Client_Id'];
 
                $invoiceContent["socid"] = $socid;
-               $invoiceContent = json_encode($invoiceContent);
+//               $invoiceContent = json_encode($invoiceContent);
 //               $invoiceContent["libelle"] = $libelle;
                 var_dump($invoiceContent);
                // envoie de la requette -> creation facture
