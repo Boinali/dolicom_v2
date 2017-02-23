@@ -74,8 +74,8 @@ class dolibController extends Controller
                     'form' => $form->createView(),)
             );
         }
-        dump($browser->getLastRequest());
-//        dump($response);
+//        dump($browser->getLastRequest());
+        dump($response);
 
     }
 
