@@ -5,7 +5,7 @@
  * Date: 23/02/2017
  * Time: 11:13
  */
-
+namespace Buzz;
 namespace AppBundle\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
