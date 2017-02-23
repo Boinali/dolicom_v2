@@ -5,7 +5,7 @@
  * Date: 23/02/2017
  * Time: 11:13
  */
-namespace Buzz;
+
 namespace AppBundle\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Buzz\Browser;
 use Buzz\Message\Form;
+use Buzz\Message;
 use Buzz\Client\ClientInterface;
 use Buzz\Client\FileGetContents;
 use Buzz\Listener\ListenerChain;
