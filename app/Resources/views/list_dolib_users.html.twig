@@ -13,32 +13,34 @@
         {% endblock %}
     </head>
     <body>
-        <div class="container">
-            <h1>Gestion des utilisateurs Dolibarr</h1>
-            <h2>Utilisateur</h2>
-            <table>
-                <tr>
-                    <th>Id</th>
-                    <th>Login</th>
-                    <th>Email</th>
-                </tr>
+    <div class="row">
+            <div class="container">
+                <h1>Gestion des utilisateurs Dolibarr</h1>
+                <h2>Utilisateur</h2>
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Login</th>
+                        <th>Email</th>
+                    </tr>
 
-                <tr>
-                    <td>
-                        {#{% if response.id is defined %}#}
-                            {#{{ response.id }}#}
-                        {#{% endif %}#}
-                        {{ response.id|default('-') }}
-                    </td>
-                    <td>{{ response.login|default('-')}}</td>
-                    <td>{{ response.email|default('-') }}</td>
-                </tr>
-            </table>
-            {{ Erreur|default('-') }}
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            {{ form_end(form) }}
-            {#<p>{{ dump()   }}</p>#}
+                    <tr>
+                        <td>
+                            {#{% if response.id is defined %}#}
+                                {#{{ response.id }}#}
+                            {#{% endif %}#}
+                            {{ response.id|default('-') }}
+                        </td>
+                        <td>{{ response.login|default('-')}}</td>
+                        <td>{{ response.email|default('-') }}</td>
+                    </tr>
+                </table>
+                {{ Erreur|default('-') }}
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+                {#<p>{{ dump()   }}</p>#}
+            </div>
         </div>
     </body>
     <script src="{{ asset('js/jquery.js') }}"></script>
