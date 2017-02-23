@@ -55,7 +55,7 @@ class invoiceController extends Controller
                $buzz = $this->container->get('buzz');
                $browser = $buzz->getBrowser('dolibarr');
                $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
-               var($response);die();
+               dump($response);die();
                $isArive = $response->getStatusCode();
 
                return $this->redirectToRoute('Succes');
