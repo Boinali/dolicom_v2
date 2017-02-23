@@ -42,6 +42,7 @@ class invoiceController extends Controller
 
           if ($form->isSubmitted() && $form->isValid())
           {
+              $headers = ['Content-Type', 'application/json'];
                // recuperation des données Post
                $data = $form->getData();
 //               $libelle = $data->get('Libelle');
@@ -52,11 +53,11 @@ class invoiceController extends Controller
 //               $invoiceContent["libelle"] = $libelle;
 
                // envoie de la requette -> creation facture
-               $buzz = $this->container->get('buzz');
-               $browser = $buzz->getBrowser('dolibarr');
-               $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
-               dump($response);die();
-               $isArive = $response->getStatusCode();
+//               $buzz = $this->container->get('buzz');
+//               $browser = $buzz->getBrowser('dolibarr');
+//               $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
+//               $isArive = $response->getStatusCode();
+              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
 
                return $this->redirectToRoute('Succes');
           }
