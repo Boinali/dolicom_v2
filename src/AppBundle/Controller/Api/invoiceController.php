@@ -16,6 +16,7 @@ use Buzz\Browser;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -27,10 +28,51 @@ class invoiceController extends Controller
     /**
      * @Route("/api/invoices", name = "dolib_invoices")
      */
-     public function createInvoice()
+     public function createInvoice(Request $request)
      {
+
+          $socid = null;
+          $form = $this->createFormBuilder()
+//              ->add('Libelle', TextType::class)
+              ->add('Client_Id', TextType::class)
+              ->add('save', SubmitType::class, array('label' => 'créer'))
+              ->getForm();
+
+          $form->handleRequest($request);
+
+          if ($form->isSubmitted() && $form->isValid())
+          {
+               // recuperation des données Post
+               $data = $form->getData();
+//               $libelle = $data->get('Libelle');
+               $socid = $data->get('Client_Id');
+
+               $invoiceContent["socid"] = $socid;
+               $invoiceContent = json_encode($invoiceContent);
+//               $invoiceContent["libelle"] = $libelle;
+
+               $app->before(function (Request $request) {
+                    if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
+                         $data = json_decode($request->getContent(), true);
+                         $request->request->replace(is_array($data) ? $data : array());
+                    }
+               });
+
+               // envoie de la requette -> creation facture
+               $buzz = $this->container->get('buzz');
+               $browser = $buzz->getBrowser('dolibarr');
+               $response = $browser->get('invoice/?api_key=712f3b895ada9274714a881c2859b617');
+
+               $isArive = $response->getStatusCode();
+
+               return $this->redirectToRoute('Succes');
+          }
+
           return $this->render('invoices.html.twig',
-               array()
+              array(
+//                       'Libelle' => $libelle,
+                  'Client_Id' => $socid,
+                  'form' => $form->createView(),)
           );
      }
     // création invoices

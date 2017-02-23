@@ -33,8 +33,8 @@ class dolibController extends Controller
 
     public function getUserById(Request $request)
     {
-        error_reporting(E_ALL);
-        ini_set('display_errors', false);
+//        error_reporting(E_ALL);
+//        ini_set('display_errors', false);
 
         $form = $this->createFormBuilder()
             ->add('id', TextType::class)
@@ -50,7 +50,7 @@ class dolibController extends Controller
     }
         $buzz = $this->container->get('buzz');
         $browser = $buzz->getBrowser('dolibarr');
-        $response = $browser->get('/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
+        $response = $browser->get('user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id='.$id.'');
         $isArive = $response->getStatusCode();
         if($isArive != 200){
             $response = null;
@@ -64,6 +64,7 @@ class dolibController extends Controller
             );
         }
         else {
+            dump($response->getContent());
             $content = json_decode($response->getContent());
             return $this->render('list_dolib_users.html.twig',
                 array(
