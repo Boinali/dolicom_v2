@@ -7,7 +7,6 @@
  */
 
 namespace AppBundle\Controller\Api;
-namespace Buzz\Message\Form;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 //use Symfony\Component\HttpFoundation\Request;
