@@ -9,9 +9,11 @@
 namespace AppBundle\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+//use Symfony\Component\HttpFoundation\Request;
+//use Symfony\Component\HttpFoundation\Response;
 
+use Buzz\Message\Request;
+use Buzz\Exception\LogicException;
 use Buzz\Browser;
 use Buzz\Message\Form;
 use Buzz\Message;
