@@ -6,6 +6,7 @@
  * Date: 21/02/2017
  * Time: 16:09
  */
+namespace AppBundle\Buzz;
 
 use Buzz\Listener\ListenerInterface;
 use Buzz\Message\MessageInterface;
@@ -13,7 +14,7 @@ use Buzz\Message\RequestInterface;
 use Buzz\Util\Cookie;
 use Buzz\Util\CookieJar;
 
-class TokenListener
+class TokenListener implements ListenerInterface
 {
     private $token;
 
