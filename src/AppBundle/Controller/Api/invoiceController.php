@@ -56,7 +56,7 @@ class invoiceController extends Controller
                // recuperation des données Post
                $data = $form->getData();
                $socid = $data['Client_Id'];
-                $api_url = "http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617";
+//                $api_url = "http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617";
                $invoiceContent["socid"] = $socid;
                $invoiceContent = json_encode($invoiceContent);
 
@@ -65,6 +65,8 @@ class invoiceController extends Controller
                $browser = $buzz->getBrowser('dolibarr');
                $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
                    $headers,$invoiceContent);
+
+              var_dump($response);die();
               return $this->render('invoices.html.twig',
                   array(
 //                       'Libelle' => $libelle,
