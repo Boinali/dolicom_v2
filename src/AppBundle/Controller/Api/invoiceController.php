@@ -22,7 +22,6 @@ use Buzz\Listener\ListenerInterface;
 use Buzz\Message\Factory\Factory;
 use Buzz\Message\Factory\FactoryInterface;
 use Buzz\Message\MessageInterface;
-use Buzz\Message\RequestInterface;
 use Buzz\Util\Url;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
