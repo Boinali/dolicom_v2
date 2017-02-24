@@ -6,7 +6,7 @@
  * Date: 21/02/2017
  * Time: 16:09
  */
-namespace AppBundle\Buzz;
+//namespace AppBundle\Buzz;
 
 use Buzz\Listener\ListenerInterface;
 use Buzz\Message\MessageInterface;
