@@ -9,7 +9,7 @@
 namespace AppBundle\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-//use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Buzz\Browser;
@@ -21,11 +21,8 @@ use Buzz\Listener\ListenerChain;
 use Buzz\Listener\ListenerInterface;
 use Buzz\Message\Factory\Factory;
 use Buzz\Message\Factory\FactoryInterface;
-use Buzz\Message\MessageInterface;
+use Buzz\Message\RequestInterface;
 use Buzz\Util\Url;
-
-use Buzz\Message\Request;
-use Buzz\Exception\LogicException;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -67,13 +64,13 @@ class invoiceController extends Controller
               $request->setFields([
                   'socid' => $socid,
                 ]);
-              $response = new Response();
+              $response = new Buzz\Message\Response();
 
-              $client = new Curl();
+              $client = new Buzz\Client\Curl();
               $client->send($request, $response);
 
 
-              $browser = new Browser();
+              $browser = new Buzz\Browser();
               $response = $browser->post('http://api.website.com/login', $headers, $invoiceContent);
 //               $invoiceContent["libelle"] = $libelle;
                // envoie de la requette -> creation facture
