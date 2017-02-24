@@ -14,7 +14,7 @@ services:
 #            - '@fos_user.user_manager'
 #            - { github: github_id }
 
-    buzz.browser.dolibarr:
-        id: api_dolib.buzz.listener.token
-        class: AppBundle\Buzz\Listener\TokenListener
-        arguments: [api_key]
+#    buzz.browser.dolibarr:
+#        id: api_dolib.buzz.listener.token
+#        class: AppBundle\Buzz\Listener\TokenListener
+#        arguments: [api_key]

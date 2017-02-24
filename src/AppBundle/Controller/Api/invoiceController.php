@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use AppBundle\Buzz\Listener\TokenListener;
+//use AppBundle\Buzz\Listener\TokenListener;
 
 use Buzz\Message;
 use Buzz\Client\ClientInterface;
