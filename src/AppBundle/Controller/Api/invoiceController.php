@@ -9,13 +9,11 @@
 namespace AppBundle\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-//use Symfony\Component\HttpFoundation\Request;
-//use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 use Buzz\Message;
-use Buzz\Message\Request;
-use Buzz\Message\Response;
 use Buzz\Client\ClientInterface;
 use Buzz\Client\FileGetContents;
 use Buzz\Listener\ListenerChain;
