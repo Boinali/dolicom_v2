@@ -13,7 +13,7 @@ use Buzz\Message\RequestInterface;
 use Buzz\Util\Cookie;
 use Buzz\Util\CookieJar;
 
-class TokenListener implements ListenerInterface
+class TokenListener
 {
     private $token;
 
