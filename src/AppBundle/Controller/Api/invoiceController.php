@@ -104,7 +104,7 @@ class invoiceController extends Controller
         $browser = new Buzz\Browser();
         $response = $browser->post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $jsonPayload);
 
-
+        var_dump($response);die();
         return $this->render('invoices.html.twig'
         );
     }
