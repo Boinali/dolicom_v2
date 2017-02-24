@@ -7,9 +7,10 @@
  */
 
 namespace AppBundle\Controller\Api;
+namespace Buzz\Message\Form;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+//use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Buzz\Browser;
@@ -23,6 +24,9 @@ use Buzz\Message\Factory\Factory;
 use Buzz\Message\Factory\FactoryInterface;
 use Buzz\Message\MessageInterface;
 use Buzz\Util\Url;
+
+use Buzz\Message\Request;
+use Buzz\Exception\LogicException;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
