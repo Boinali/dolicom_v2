@@ -39,7 +39,7 @@ class invoiceController extends Controller
      */
      public function createInvoice(Request $request)
      {
-         return $this->render('list_dolib_users.html.twig');
+         return $this->render('invoices.html.twig');
      }
     // création invoices
 
