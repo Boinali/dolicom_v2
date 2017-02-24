@@ -45,7 +45,9 @@ class invoiceController extends Controller
              ->add('save', SubmitType::class, array('label' => 'créer'))
              ->getForm();
          return $this->render('invoices.html.twig',
-            array()
+            array(
+                'form' => $form->createView(),
+                )
          );
      }
     // création invoices
