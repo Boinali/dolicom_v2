@@ -65,13 +65,13 @@ class invoiceController extends Controller
               $request->setFields([
                   'socid' => $socid,
                 ]);
-              $response = new Buzz\Message\Response();
+              $response = new Response();
 
-              $client = new Buzz\Client\Curl();
+              $client = new Curl();
               $client->send($request, $response);
 
 
-              $browser = new Buzz\Browser();
+              $browser = new Browser();
               $response = $browser->post('http://api.website.com/login', $headers, $invoiceContent);
 //               $invoiceContent["libelle"] = $libelle;
                // envoie de la requette -> creation facture
