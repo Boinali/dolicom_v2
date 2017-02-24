@@ -17,4 +17,4 @@ services:
     buzz.browser:
         id: api_dolib.buzz.listener.token
         class: AppBundle\Buzz\Listener\TokenListener
-        arguments: api_key
+        arguments: [api_key]
