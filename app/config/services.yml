@@ -14,7 +14,7 @@ services:
 #            - '@fos_user.user_manager'
 #            - { github: github_id }
 
-    service_name: buzz.browser
-        id: api_key
+    buzz.browser:
+        id: api_dolib.buzz.listener.token
         class: AppBundle\Buzz\Listener\TokenListener
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+        arguments: api_key
