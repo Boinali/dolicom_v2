@@ -40,12 +40,13 @@ class invoiceController extends Controller
      */
      public function createInvoice(Request $request)
      {
-         $buzz = $this->container->get('buzz');
-////        var_dump('here');die();
-//         $browser = $buzz->getBrowser('dolibarr');
-//         $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
-//         var_dump($response);die();
-         return $this->render('invoices.html.twig');
+         $form = $this->createFormBuilder()
+             ->add('id_User', TextType::class)
+             ->add('save', SubmitType::class, array('label' => 'créer'))
+             ->getForm();
+         return $this->render('invoices.html.twig',
+            array()
+         );
      }
     // création invoices
 
