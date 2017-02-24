@@ -18,6 +18,7 @@ use Buzz\Client\ClientInterface;
 use Buzz\Client\FileGetContents;
 use Buzz\Listener\ListenerChain;
 use Buzz\Listener\ListenerInterface;
+use Buzz\Listener\CallbackListener;
 use Buzz\Message\Factory\Factory;
 use Buzz\Message\Factory\FactoryInterface;
 use Buzz\Message\RequestInterface;
