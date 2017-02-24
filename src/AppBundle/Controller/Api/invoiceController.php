@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-
+use AppBundle\Buzz\Listener\TokenListener;
 use Buzz\Message;
 use Buzz\Client\ClientInterface;
 use Buzz\Client\FileGetContents;
@@ -39,6 +39,10 @@ class invoiceController extends Controller
      */
      public function createInvoice(Request $request)
      {
+         $buzz = $this->container->get('buzz');
+//        var_dump('here');die();
+         $browser = $buzz->getBrowser('dolibarr');
+         $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
          return $this->render('invoices.html.twig');
      }
     // création invoices
