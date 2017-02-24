@@ -12,8 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use Buzz\Browser;
-use Buzz\Message\Form;
+
 use Buzz\Message;
 use Buzz\Client\ClientInterface;
 use Buzz\Client\FileGetContents;
@@ -56,15 +55,19 @@ class invoiceController extends Controller
                // recuperation des données Post
                $data = $form->getData();
                $socid = $data['Client_Id'];
-//                $api_url = "http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617";
+                $api_url = "http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617";
                $invoiceContent["socid"] = $socid;
                $invoiceContent = json_encode($invoiceContent);
 
                // envoie de la requette -> creation facture
-               $buzz = $this->container->get('buzz');
-               $browser = $buzz->getBrowser('dolibarr');
-               $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
-                   $headers,$invoiceContent);
+              $response = new Response($api_url);
+              $response->content->set($invoiceContent);
+              $response->send();
+
+//               $buzz = $this->container->get('buzz');
+//               $browser = $buzz->getBrowser('dolibarr');
+//               $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
+//                   $headers,$invoiceContent);
 
               var_dump($response);die();
               return $this->render('invoices.html.twig',
