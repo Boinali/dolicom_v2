@@ -55,30 +55,16 @@ class invoiceController extends Controller
               $headers = ['Content-Type', 'application/json'];
                // recuperation des données Post
                $data = $form->getData();
-//               $libelle = $data->get('Libelle');
                $socid = $data['Client_Id'];
                 $api_url = "http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617";
                $invoiceContent["socid"] = $socid;
                $invoiceContent = json_encode($invoiceContent);
-              $request = new Form(Form::METHOD_POST, 'Facture', $api_url);
-              $request->setFields([
-                  'socid' => $socid,
-                ]);
-              $response = new Buzz\Message\Response();
 
-              $client = new Buzz\Client\Curl();
-              $client->send($request, $response);
-
-
-              $browser = new Buzz\Browser();
-              $response = $browser->post('http://api.website.com/login', $headers, $invoiceContent);
-//               $invoiceContent["libelle"] = $libelle;
                // envoie de la requette -> creation facture
                $buzz = $this->container->get('buzz');
-//               $browser = $buzz->getBrowser('dolibarr');
-//               $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
-//                   $headers,$invoiceContent);
-//              $response = Buzz::post('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617', $headers, $invoiceContent);
+               $browser = $buzz->getBrowser('dolibarr');
+               $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
+                   $headers,$invoiceContent);
               return $this->render('invoices.html.twig',
                   array(
 //                       'Libelle' => $libelle,
@@ -90,7 +76,6 @@ class invoiceController extends Controller
 
           return $this->render('invoices.html.twig',
               array(
-//                       'Libelle' => $libelle,
                   'Client_Id' => $socid,
                   'form' => $form->createView(),)
           );
