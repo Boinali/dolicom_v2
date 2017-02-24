@@ -60,14 +60,10 @@ class invoiceController extends Controller
                $invoiceContent = json_encode($invoiceContent);
 
                // envoie de la requette -> creation facture
-              $response = new Response($api_url);
-              $response->content->set($invoiceContent);
-              $response->send();
 
-//               $buzz = $this->container->get('buzz');
-//               $browser = $buzz->getBrowser('dolibarr');
-//               $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
-//                   $headers,$invoiceContent);
+               $buzz = $this->container->get('buzz');
+               $browser = $buzz->getBrowser('dolibarr');
+               $response = $browser->preSend('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
 
               var_dump($response);die();
               return $this->render('invoices.html.twig',
