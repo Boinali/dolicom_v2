@@ -1,6 +1,6 @@
 
 <!--<services>-->
-    <!--<service id="api_dolib.buzz.listener.token" class="src\AppBundle\Buzz\Listener\TokenListener">-->
+    <!--<service id="api_dolib.buzz.listener.token" class="AppBundle\Buzz\Listener\TokenListener">-->
         <!--<argument>%api_key%</argument>-->
     <!--</service>-->
 <!--</services>-->
