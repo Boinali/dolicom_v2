@@ -48,8 +48,8 @@ class invoiceController extends Controller
          $form->handleRequest($request);
 
          if ($form->isSubmitted() && $form->isValid()) {
-             $id = $form->get('id_User')->getData();
-             $content["socid"] = ".$id.";
+             $id = $form->get('id_User')->getData();var_dump($id);
+             $content["socid"] = $id;
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
              $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
