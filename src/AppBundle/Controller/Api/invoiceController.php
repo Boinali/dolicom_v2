@@ -52,10 +52,10 @@ class invoiceController extends Controller
              $content = ["socid" => "3"];
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
-             $response = $browser->submit('http://dolibarr.localdomain/api/index.php/invoice/?api_key=712f3b895ada9274714a881c2859b617',
+             $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
                  $content);
 
-             var_dump($response);die();
+             dump($response);die();
          }
 
          return $this->render('invoices.html.twig',
