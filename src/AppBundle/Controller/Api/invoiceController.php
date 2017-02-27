@@ -40,6 +40,7 @@ class invoiceController extends Controller
      */
      public function createInvoice(Request $request)
      {
+         $msg = "";
          $form = $this->createFormBuilder()
              ->add('id_User', TextType::class)
              ->add('save', SubmitType::class, array('label' => 'créer'))
@@ -48,17 +49,23 @@ class invoiceController extends Controller
          $form->handleRequest($request);
 
          if ($form->isSubmitted() && $form->isValid()) {
-             $id = $form->get('id_User')->getData();var_dump($id);
+             $id = $form->get('id_User')->getData();
              $content["socid"] = $id;
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
              $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
                  $content, RequestInterface::METHOD_POST);
+
+             $isArrive = $response->getStatusCode();
+             if($isArrive != 200){
+                 $msg = "Erreur, cet Id Client n'existe pas";
+             }
          }
 
          return $this->render('invoices.html.twig',
              array(
                  'form' => $form->createView(),
+                 'Erreur' => $msg,
              )
          );
 
