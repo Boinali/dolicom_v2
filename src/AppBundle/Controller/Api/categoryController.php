@@ -44,6 +44,7 @@ class categoryController extends Controller
         $form = $this->createFormBuilder()
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
+            ->add('Color', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
@@ -52,8 +53,11 @@ class categoryController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $label = $form->get('Label')->getData();
             $type = $form->get('Type')->getData();
+            $color = $form->get('Color')->getData();
+
             $content["label"] = $label;
             $content["type"] = $type;
+            $content["Couleur"] = $color;
             $buzz = $this->container->get('buzz');
             $browser = $buzz->getBrowser('dolibarr');
 
