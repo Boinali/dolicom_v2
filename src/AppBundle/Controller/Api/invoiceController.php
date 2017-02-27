@@ -52,13 +52,13 @@ class invoiceController extends Controller
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
              $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
-             return $this->render('invoices.html.twig',
-                 array(
-                     'form' => $form->createView(),
-                 )
-             );
-
          }
+
+         return $this->render('invoices.html.twig',
+             array(
+                 'form' => $form->createView(),
+             )
+         );
 
      }
     // création invoices
