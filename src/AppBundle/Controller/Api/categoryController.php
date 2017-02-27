@@ -57,7 +57,7 @@ class categoryController extends Controller
 
             $content["label"] = $label;
             $content["type"] = $type;
-            $content["Couleur"] = $color;
+            $content["color"] = $color;
             $buzz = $this->container->get('buzz');
             $browser = $buzz->getBrowser('dolibarr');
 
