@@ -56,10 +56,7 @@ class invoiceController extends Controller
              $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
                  $content, RequestInterface::METHOD_POST);
 
-             $isArrive = $response->getStatusCode(); var_dump($isArrive);die();
-             if($isArrive != 200){
-                 $msg = "Erreur, cet Id Client n'existe pas";
-             }
+             /*complete code with control*/
          }
 
          return $this->render('invoices.html.twig',
@@ -70,6 +67,5 @@ class invoiceController extends Controller
          );
 
      }
-    // création invoices
 
 }
