@@ -49,7 +49,7 @@ class invoiceController extends Controller
 
          if ($form->isSubmitted() && $form->isValid()) {
 //            $data = $form->getData();
-             $content = ["socid" => "3"];
+             $content["socid"] = "3";var_dump($content);
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
              $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
