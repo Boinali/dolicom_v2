@@ -43,7 +43,7 @@ class categoryController extends Controller
         $msg = "";
         $form = $this->createFormBuilder()
             ->add('Label', TextType::class)
-            ->add('Type', NumberType::class)
+            ->add('Type', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
