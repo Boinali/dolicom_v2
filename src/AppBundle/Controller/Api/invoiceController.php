@@ -48,7 +48,7 @@ class invoiceController extends Controller
          $form->handleRequest($request);
 
          if ($form->isSubmitted() && $form->isValid()) {
-             $id = $form('id_User')->getData();
+             $id = $form->get('id_User')->getData();
              $content["socid"] = ".$id.";
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
