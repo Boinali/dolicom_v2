@@ -53,7 +53,7 @@ class invoiceController extends Controller
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
              $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
-                 $content);
+                 $content, RequestInterface::METHOD_POST);
 
              dump($response);die();
          }
