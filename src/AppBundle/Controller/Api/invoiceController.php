@@ -52,7 +52,7 @@ class invoiceController extends Controller
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
              $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
-             var_dump($response->setContent('toto'));die();
+             var_dump($response->setContent());die();
          }
 
          return $this->render('invoices.html.twig',
