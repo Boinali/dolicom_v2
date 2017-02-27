@@ -51,7 +51,7 @@ class invoiceController extends Controller
 //            $data = $form->getData();
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
-             var_dump($browser->setContent('toto'));
+             var_dump($browser->setContent('toto'));die();
              $response = $browser->post('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
          }
 
