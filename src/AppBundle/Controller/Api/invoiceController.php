@@ -44,11 +44,22 @@ class invoiceController extends Controller
              ->add('id_User', TextType::class)
              ->add('save', SubmitType::class, array('label' => 'créer'))
              ->getForm();
-         return $this->render('invoices.html.twig',
-            array(
-                'form' => $form->createView(),
-                )
-         );
+
+         $form->handleRequest($request);
+
+         if ($form->isSubmitted() && $form->isValid()) {
+//            $data = $form->getData();
+             $buzz = $this->container->get('buzz');
+             $browser = $buzz->getBrowser('dolibarr');
+             $response = $browser->get('/invoice/?api_key=712f3b895ada9274714a881c2859b617');
+             return $this->render('invoices.html.twig',
+                 array(
+                     'form' => $form->createView(),
+                 )
+             );
+
+         }
+
      }
     // création invoices
 
