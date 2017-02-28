@@ -45,7 +45,7 @@ class categoryController extends Controller
         $formCreateCat = $this->createFormBuilder()
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
-            ->add('Color', TextType::class)
+            ->add('Description', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
@@ -60,10 +60,10 @@ class categoryController extends Controller
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
-//        if('POST' === $request->getMethod()){
+        if('POST' === $request->getMethod()){
             // traitement du premier form
-            if ($formCreateCat->isSubmitted()){
-                var_dump('here');die();
+            if ($request->request->has('formCreateCat')){
+                var_dump("here");die();
                 $formCreateCat->handleRequest($request);
 
                 $label = $formCreateCat->get('Label')->getData();
@@ -82,7 +82,7 @@ class categoryController extends Controller
                 /*complete code with control*/
             }
 
-            if ($formCreateServ->isSubmitted()){
+            if ($request->request->has('formCreateServ')){
 
                 $formCreateServ->handleRequest($request);
 
@@ -113,7 +113,7 @@ class categoryController extends Controller
 
                 /*complete code with control*/
             }
-//        }
+        }
 
 
 //        if ($formCreateCat->isSubmitted() && $formCreateCat->isValid())
