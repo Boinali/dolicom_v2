@@ -42,14 +42,14 @@ class categoryController extends Controller
     {
 
 
-        $formCreateCat = $this->createNameBuilder()
+        $formCreateCat = $this->createFormBuilder()
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
             ->add('Color', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
-        $formCreateServ = $this->createNameBuilder()
+        $formCreateServ = $this->createFormBuilder()
             ->add('Reference', TextType::class)
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
