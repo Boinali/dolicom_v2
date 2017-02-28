@@ -62,9 +62,8 @@ class categoryController extends Controller
 
         if('POST' === $request->getMethod()){
             // traitement du premier form
-            var_dump($request->request);die();
-            if ($request->request->has('formCreateCat')){
-
+            if ($formCreateCat->isSubmitted()){
+                var_dump('here');die();
                 $formCreateCat->handleRequest($request);
 
                 $label = $formCreateCat->get('Label')->getData();
@@ -83,7 +82,7 @@ class categoryController extends Controller
                 /*complete code with control*/
             }
 
-            if ($request->request->has('formCreateServ')){
+            if ($formCreateServ->isSubmitted()){
 
                 $formCreateServ->handleRequest($request);
 
