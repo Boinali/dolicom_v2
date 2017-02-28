@@ -59,7 +59,7 @@ class invoiceController extends Controller
              /*complete code with control*/
          }
 
-         return $this->render('AppBundle:invoices.html.twig',
+         return $this->render('AppBundle::invoices.html.twig',
              array(
                  'form' => $form->createView(),
                  'Erreur' => $msg,
