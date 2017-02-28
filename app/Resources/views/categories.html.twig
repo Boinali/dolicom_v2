@@ -16,10 +16,15 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6">
+            <div class="well">
+                <form method="post" {{ form_enctype(formCreateCat) }}>
+                    {{ form_widget(formCreateCat) }}
+                </form>
+            </div>
             <h1>Gestion des Catégories</h1>
-            {{ form_start(formCreateCat) }}
-                {{ form_widget(formCreateCat) }}
-            {{ form_end(formCreateCat) }}
+            {#{{ form_start(formCreateCat) }}#}
+                {##}
+            {#{{ form_end(formCreateCat) }}#}
         </div>
         <div class="col-lg-6">
             <h1>Gestion des Services</h1>
