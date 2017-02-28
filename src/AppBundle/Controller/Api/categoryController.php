@@ -42,7 +42,6 @@ class categoryController extends Controller
     {
 
         var_dump($request->getMethod());die();
-        $msg = "";
         $formCreateCat = $this->createFormBuilder()
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
@@ -61,8 +60,9 @@ class categoryController extends Controller
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
-        if('post' === $request->getMethod()){
+        if('POST' === $request->getMethod()){
             // traitement du premier form
+            var_dump($request->request->get());die();
             if ($request->request->has('formCreateCat')){
 
                 $formCreateCat->handleRequest($request);
@@ -126,7 +126,6 @@ class categoryController extends Controller
             array(
                 'formCreateCat' => $formCreateCat->createView(),
                 'formCreateServ' => $formCreateServ->createView(),
-                'Erreur' => $msg,
             )
         );
 
