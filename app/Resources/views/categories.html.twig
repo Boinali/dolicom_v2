@@ -15,22 +15,26 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
+            <h1>Gestion des Catégories</h1>
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateCat) }}>
                     {{ form_widget(formCreateCat) }}
+                    <input type="submit" class="btn btn-primary">
                 </form>
             </div>
-            <h1>Gestion des Catégories</h1>
             {#{{ form_start(formCreateCat) }}#}
                 {##}
             {#{{ form_end(formCreateCat) }}#}
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-offset-4 col-lg-4">
             <h1>Gestion des Services</h1>
-            {{ form_start(formCreateServ) }}
-             {{ form_widget(formCreateServ) }}
-            {{ form_end(formCreateServ) }}
+            <div class="well">
+                <form method="post" {{ form_enctype(formCreateServ) }}
+                {#{{ form_start(formCreateServ) }}#}
+                 {{ form_widget(formCreateServ) }}
+                {#{{ form_end(formCreateServ) }}#}
+            </div>
         </div>
         <br>
         {{ Erreur|default('-') }}
