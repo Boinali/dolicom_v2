@@ -49,7 +49,7 @@ class categoryController extends Controller
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
-        $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateCat')
+        $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateServ')
             ->add('Reference', TextType::class)
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
@@ -62,7 +62,7 @@ class categoryController extends Controller
 
         if('POST' === $request->getMethod()){
             // traitement du premier form
-            var_dump($request->request->has('formCreateCat'));
+            var_dump($request->request->has('formCreateServ'));
 
             if ($request->request->has('formCreateCat')){
 
