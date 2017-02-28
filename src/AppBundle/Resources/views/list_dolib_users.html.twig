@@ -1,0 +1,33 @@
+
+{% extends "::base.html.twig" %}
+{% block body %}
+    <div class="row">
+        <h1>Gestion des utilisateurs Dolibarr</h1>
+        <h2>Utilisateur</h2>
+        <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Email</th>
+            </tr>
+
+            <tr>
+                <td>
+                    {#{% if response.id is defined %}#}
+                        {#{{ response.id }}#}
+                    {#{% endif %}#}
+                    {{ response.id|default('-') }}
+                </td>
+                <td>{{ response.login|default('-')}}</td>
+                <td>{{ response.email|default('-') }}</td>
+            </tr>
+        </table>
+        {{ Erreur|default('-') }}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+        {#<p>{{ dump()   }}</p>#}
+        </div>
+    </div>
+{% endblock %}
