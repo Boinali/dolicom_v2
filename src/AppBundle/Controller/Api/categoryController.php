@@ -41,7 +41,7 @@ class categoryController extends Controller
     public function createCategories(Request $request)
     {
 
-        var_dump($request->getMethod());die();
+
         $formCreateCat = $this->createFormBuilder()
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
