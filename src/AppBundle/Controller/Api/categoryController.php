@@ -52,11 +52,11 @@ class categoryController extends Controller
         $formCreateServ = $this->createFormBuilder()
             ->add('Reference', TextType::class)
             ->add('Label', TextType::class)
-            ->add('Type', NumberType ::class)
+            ->add('Type', NumberType::class)
             ->add('Description', TextareaType::class)
-            ->add('Vente', NumberType ::class)
-            ->add('Achat', NumberType ::class)
-            ->add('Prix_TTC', NumberType ::class)
+            ->add('Vente', NumberType::class)
+            ->add('Achat', NumberType::class)
+            ->add('Prix_TTC', NumberType::class)
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
