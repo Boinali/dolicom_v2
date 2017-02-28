@@ -42,7 +42,7 @@ class invoiceController extends Controller
      {
          $msg = "";
          $form = $this->createFormBuilder()
-             ->add('id_User', TextType::class)
+             ->add('id_User', 'text', ['attr' => ['data-help'  => 'Task name should be short and actionable']])
              ->add('save', SubmitType::class, array('label' => 'créer'))
              ->getForm();
 
