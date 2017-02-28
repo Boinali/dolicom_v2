@@ -61,6 +61,7 @@ class categoryController extends Controller
             ->getForm();
 
         if('POST' === $request->getMethod()){
+            var_dump("1");
             // traitement du premier form
             if ($request->request->has('formCreateCat')){
                 var_dump("here");die();
