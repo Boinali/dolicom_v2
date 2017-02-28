@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Gestion des utilisateurs Dolibarr</title>
-    {% block stylesheets %}
-        <link rel="stylesheet"
-              href="{{ asset('assets/css/test.css') }}" type="text/css" />
-        <link rel="stylesheet"
-              href="{{ asset('assets/css/bootstrap.css') }}">
-        <link rel="stylesheet"
-              href="{{ asset('assets/css/font-awesome.css') }}">
 
-    {% endblock %}
-</head>
-<body>
-<div class="container">
+{% extends "::base.html.twig" %}
 
+{%  block body %}
     <div class="row">
         <div class="col-lg-4 col-md-4">
             <h1>Gestion des catégories</h1>
@@ -42,8 +29,4 @@
         </div>
     </div>
 
-</div>
-</body>
-<script src="{{ asset('assets/js/jquery.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.js') }}"></script>
-</html>
+{%  endblock %}
