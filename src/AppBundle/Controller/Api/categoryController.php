@@ -131,19 +131,14 @@ class categoryController extends Controller
 
     }
 
-    public function createServices(Request $request)
-    {
-        $form = $this->createFormBuilder()
-            ->add('Label', TextType::class)
-            ->add('Type', TextType::class)
-            ->add('Color', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'créer'))
-            ->getForm();
-
-        return $this->render('categories.html.twig',
-            array(
-                'form' => $form->createView(),
-            )
-        );
-    }
+//    public function createServices(Request $request)
+//    {
+//        // recup des produits et services
+//
+//        return $this->render('categories.html.twig',
+//            array(
+//                'form' => $form->createView(),
+//            )
+//        );
+//    }
 }
