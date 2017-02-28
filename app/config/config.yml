@@ -159,4 +159,5 @@ buzz:
 #            api/index.php/user/{n0}?api_key=712f3b895ada9274714a881c2859b617&id=1
 
 twig:
-    form_themes: ['bootstrap_3_layout.html.twig']
+    form:
+        resources: ['bootstrap_3_layout.html.twig']
