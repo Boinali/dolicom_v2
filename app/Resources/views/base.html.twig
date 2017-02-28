@@ -21,9 +21,9 @@
                         <a class="navbar-brand" href="{{ path('dolib_users') }}">Dolicom</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="{{ path('dolib_users') }}">Gestion utilisateurs</a></li>
-                        <li><a href="{{ path('dolib_categories') }}">Gestion services</a></li>
-                        <li><a href="{{ path('dolib_invoices') }}">Gestion invoices</a></li>
+                        <li class="{% if app.request.attributes.get('_route') == 'dolib_users' %}active{% endif %}"><a href="{{ path('dolib_users') }}">Gestion utilisateurs</a></li>
+                        <li class="{% if app.request.attributes.get('_route') == 'dolib_categories' %}active{% endif %}"><a href="{{ path('dolib_categories') }}">Gestion services</a></li>
+                        <li class="{% if app.request.attributes.get('_route') == 'dolib_invoices' %}active{% endif %}"><a href="{{ path('dolib_invoices') }}">Gestion invoices</a></li>
                     </ul>
                 </div>
             </nav>
