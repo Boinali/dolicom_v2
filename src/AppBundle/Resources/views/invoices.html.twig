@@ -3,9 +3,8 @@
 {% block title %}Invoices {% endblock %}
 {#{% block navbar|navbar %}#}
 {% block body %}
-
+    <h1>Gestion des {{ block('title') }}</h1>
     <div class="row">
-        <h1>Gestion des Invoices</h1>
         {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_end(form) }}
