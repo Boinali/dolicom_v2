@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestion des utilisateurs Dolibarr</title>
-    {% block stylesheets %}
-        <link rel="stylesheet"
-              href="{{ asset('assets/css/test.css') }}" type="text/css" />
-        <link rel="stylesheet"
-              href="{{ asset('assets/css/bootstrap.css') }}">
-        <link rel="stylesheet"
-              href="{{ asset('assets/css/font-awesome.css') }}">
-
+    {% block head %}
+    <title>{% block title %}{% endblock %} - Dolicom</title>
+        {% block stylesheets %}
+            <link rel="stylesheet"
+                  href="{{ asset('assets/css/test.css') }}" type="text/css" />
+            <link rel="stylesheet"
+                  href="{{ asset('assets/css/bootstrap.css') }}">
+            <link rel="stylesheet"
+                  href="{{ asset('assets/css/font-awesome.css') }}">
+        {% endblock %}
     {% endblock %}
 </head>
 <body>
