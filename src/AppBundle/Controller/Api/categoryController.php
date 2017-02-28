@@ -59,12 +59,12 @@ class categoryController extends Controller
             ->add('Prix_TTC', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
-        var_dump($request->getMethod());
+
         if('POST' === $request->getMethod()){
-            var_dump("1");
+            var_dump($request->request->has('formCreateCat'));
             // traitement du premier form
             if ($request->request->has('formCreateCat')){
-                var_dump("here");die();
+
                 $formCreateCat->handleRequest($request);
 
                 $label = $formCreateCat->get('Label')->getData();
