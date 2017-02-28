@@ -53,7 +53,7 @@ class categoryController extends Controller
             ->add('Reference', TextType::class)
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
-            ->add('Description', TextareaType::class)
+            ->add('Description', TextType::class)
             ->add('Vente', TextType::class)
             ->add('Achat', TextType::class)
             ->add('Prix_TTC', TextType::class)
