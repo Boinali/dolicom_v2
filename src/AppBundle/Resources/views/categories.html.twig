@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-lg-4 col-md-4">
-            <h2>Gestion des catégories</h2>
+            <h2>Categories</h2>
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateCat) }}>
                     {{ form_widget(formCreateCat) }}
@@ -16,19 +16,20 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-4">
-            <h2>Litse des Catégories</h2>
+            <h2>Litse des catégories</h2>
         </div>
     </div>
+
     <hr>
     <div class="row">
         <div class="col-lg-4 col-md-4">
-            <h2>Gestion des services</h2>
+            <h2>Services</h2>
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateServ) }}
                 {{ form_widget(formCreateServ) }}
             </div>
             <div class="col-lg-4 col-md-4">
-                <h2>Litse des Services</h2>
+                <h2>Litse des services</h2>
             </div>
         </div>
     </div>
