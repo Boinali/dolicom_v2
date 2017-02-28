@@ -38,41 +38,110 @@ class categoryController extends Controller
     /**
      * @Route("/api/categories", name = "dolib_categories")
      */
-    public function createInvoice(Request $request)
+    public function createCategories(Request $request)
     {
+
         $msg = "";
-        $form = $this->createFormBuilder()
+        $formCreateCat = $this->createFormBuilder()
             ->add('Label', TextType::class)
             ->add('Type', TextType::class)
             ->add('Color', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
-        $form->handleRequest($request);
+        $formCreateServ = $this->createFormBuilder()
+            ->add('Label', TextType::class)
+            ->add('Type', TextType::class)
+            ->add('Color', TextType::class)
+            ->add('save', SubmitType::class, array('label' => 'créer'))
+            ->getForm();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $label = $form->get('Label')->getData();
-            $type = $form->get('Type')->getData();
-            $color = $form->get('Color')->getData();
+        if('POST' === $request->getMethod()){
 
-            $content["label"] = $label;
-            $content["type"] = $type;
-            $content["color"] = $color;
-            $buzz = $this->container->get('buzz');
-            $browser = $buzz->getBrowser('dolibarr');
+            // traitement du premier form
+            if ($request->request->has('formCreateCat')){
 
-            $response = $browser->submit('/category?api_key=712f3b895ada9274714a881c2859b617',
-                $content, RequestInterface::METHOD_POST);
+                $formCreateCat->handleRequest($request);
 
-            /*complete code with control*/
+                $label = $formCreateCat->get('Label')->getData();
+                $type = $formCreateCat->get('Type')->getData();
+                $color = $formCreateCat->get('Color')->getData();
+
+                $content["label"] = $label;
+                $content["type"] = $type;
+                $content["color"] = $color;
+                $buzz = $this->container->get('buzz');
+                $browser = $buzz->getBrowser('dolibarr');
+
+                $response = $browser->submit('/category?api_key=712f3b895ada9274714a881c2859b617',
+                    $content, RequestInterface::METHOD_POST);
+
+                /*complete code with control*/
+            }
+
+            if ($request->request->has('formCreateServ')){
+
+                $formCreateServ->handleRequest($request);
+
+                $ref = $formCreateServ->get('Reference')->getData();
+                $label = $formCreateServ->get('Label')->getData();
+                $desc = $formCreateServ->get('Description')->getData();
+                $type = $formCreateServ->get('Type')->getData();
+                $status = $formCreateServ->get('Vente')->getData();
+                $status_buy = $formCreateServ->get('Achat')->getData();
+                $price_TTC = $formCreateServ->get('Prix_TTC')->getData();
+
+                $content["ref"] = $ref;
+                $content["label"] = $label;
+                $content["description"] = $desc;
+                $content["type"] = $type;
+                $content["status"] = $status;
+                $content["status_buy"] = $status_buy;
+                $content["price_ttc"] = $price_TTC;
+                // prix en TTC
+                $content["price_base_type"] = "TTC";
+
+
+                $buzz = $this->container->get('buzz');
+                $browser = $buzz->getBrowser('dolibarr');
+
+                $response = $browser->submit('/product/?api_key=712f3b895ada9274714a881c2859b617',
+                    $content, RequestInterface::METHOD_POST);
+
+                /*complete code with control*/
+            }
         }
+
+
+//        if ($formCreateCat->isSubmitted() && $formCreateCat->isValid())
+//        {
+//
+//        }
 
         return $this->render('categories.html.twig',
             array(
-                'form' => $form->createView(),
+                'formCreateCat' => $formCreateCat->createView(),
+                'formCreateServ' => $formCreateServ->createView(),
                 'Erreur' => $msg,
             )
         );
 
     }
+
+//    public function createServices(Request $request)
+//    {
+//        $form = $this->createFormBuilder()
+//            ->add('Label', TextType::class)
+//            ->add('Type', TextType::class)
+//            ->add('Color', TextType::class)
+//            ->add('save', SubmitType::class, array('label' => 'créer'))
+//            ->getForm();
+//
+//        return $this->render('categories.html.twig',
+//            array(
+//                'form' => $form->createView(),
+//                'Erreur' => $msg,
+//            )
+//        );
+//    }
 }

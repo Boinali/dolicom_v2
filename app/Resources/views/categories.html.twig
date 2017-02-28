@@ -15,10 +15,18 @@
 <body>
 <div class="container">
     <div class="row">
-        <h1>Gestion des Catégories</h1>
-        {{ form_start(form) }}
-            {{ form_widget(form) }}
-        {{ form_end(form) }}
+        <div class="col-lg-6">
+            <h1>Gestion des Catégories</h1>
+            {{ form_start(formCreateCat) }}
+                {{ form_widget(formCreateCat) }}
+            {{ form_end(formCreateCat) }}
+        </div>
+        <div class="col-lg-6">
+            <h1>Gestion des Services</h1>
+            {{ form_start(formCreateServ) }}
+             {{ form_widget(formCreateServ) }}
+            {{ form_end(formCreateServ) }}
+        </div>
         <br>
         {{ Erreur|default('-') }}
     </div>
