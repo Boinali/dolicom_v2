@@ -59,7 +59,7 @@ class dolibController extends Controller
             $response = null;
             $content = null;
             $msg = "Erreur, cet Id n'existe pas";
-            return $this->render('list_dolib_users.html.twig',
+            return $this->render('utilisateur.html.twig',
                 array(
                     'response' => $content,
                     'form' => $form->createView(),
@@ -69,7 +69,7 @@ class dolibController extends Controller
         else {
             $content = json_decode($response->getContent());
             dump($response);
-            return $this->render('AppBundle::list_dolib_users.html.twig',
+            return $this->render('AppBundle::utilisateur.html.twig',
                 array(
                     'response' => $content,
                     'form' => $form->createView(),)
