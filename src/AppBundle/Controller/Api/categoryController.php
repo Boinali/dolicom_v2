@@ -60,7 +60,7 @@ class categoryController extends Controller
             ->add('save', SubmitType::class, array('label' => 'créer'))
             ->getForm();
 
-        if('POST' === $request->getMethod()){
+        if('post' === $request->getMethod()){
 
             // traitement du premier form
             if ($request->request->has('formCreateCat')){
