@@ -143,7 +143,6 @@ class categoryController extends Controller
 //        return $this->render('categories.html.twig',
 //            array(
 //                'form' => $form->createView(),
-//                'Erreur' => $msg,
 //            )
 //        );
 //    }
