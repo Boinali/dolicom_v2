@@ -14,22 +14,11 @@
     {% endblock %}
 </head>
 <body>
-        {% block navbar %}
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="{{ path('dolib_users') }}">Dolicom</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="{{ path('dolib_users') }}">Gestion utilisateurs</a></li>
-                        <li><a href="{{ path('dolib_categories') }}">Gestion services</a></li>
-                        <li><a href="{{ path('dolib_invoices') }}">Gestion invoices</a></li>
-                    </ul>
-                </div>
-            </nav>
-        {% endblock %}
+
         <div class="container">
-            {% block body %}{% endblock %}
+            {% block body %}
+                {% include ('navbar.html.twig') %}
+            {% endblock %}
         </div>
 
         {% block javascripts %}
