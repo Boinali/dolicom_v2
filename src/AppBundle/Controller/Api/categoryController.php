@@ -41,6 +41,7 @@ class categoryController extends Controller
     public function createCategories(Request $request)
     {
 
+        var_dump($request->getMethod());die();
         $msg = "";
         $formCreateCat = $this->createFormBuilder()
             ->add('Label', TextType::class)
@@ -61,7 +62,6 @@ class categoryController extends Controller
             ->getForm();
 
         if('post' === $request->getMethod()){
-            var_dump('here'); die();
             // traitement du premier form
             if ($request->request->has('formCreateCat')){
 
