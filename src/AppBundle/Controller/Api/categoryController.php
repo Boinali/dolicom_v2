@@ -61,7 +61,7 @@ class categoryController extends Controller
             ->getForm();
 
         if('post' === $request->getMethod()){
-
+            var_dump('here'); die();
             // traitement du premier form
             if ($request->request->has('formCreateCat')){
 
@@ -84,7 +84,7 @@ class categoryController extends Controller
             }
 
             if ($request->request->has('formCreateServ')){
-                var_dump('here'); die();
+
                 $formCreateServ->handleRequest($request);
 
                 $ref = $formCreateServ->get('Reference')->getData();
