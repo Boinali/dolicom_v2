@@ -36,12 +36,19 @@
                         {% endif %}
                     </div>
                     <div class="form-group">
-                        {{ form_row(formCreateCat.Type,
-                        {'attr':{'class':'form-control'}})}}
+                        {{ form_row(formCreateCat.Type, 'Type :',
+                        {'attr':{'class':'form-label'}})}}
+
+                        {{ form_widget(formCreateCat.Type,
+                        {'attr':{'class':'form-control'}}) }}
+
                     </div>
                     <div class="form-group">
-                        {{ form_row(formCreateCat.Color,
-                        {'attr':{'class':'form-control'}})}}
+                        {{ form_row(formCreateCat.Color, 'Couleur :'
+                        {'attr':{'class':'form-label'}})}}
+
+                        {{ form_widget(formCreateCat.Color,
+                        {'attr':{'class':'form-control'}}) }}
                     </div>
 
                     <button type="submit" class="btn btn-success">Creer categorie</button>
@@ -63,7 +70,64 @@
             <h2>Services</h2>
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateServ) }}
-                {{ form_widget(formCreateServ) }}
+                {{ form_start(formCreateServ, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="form-group">
+                    {{ form_label(formCreateServ.Reference,'Reference :',
+                    {'label_attr':{'class':'control-label'}}) }}
+
+                    {{ form_widget(formCreateServ.Reference,
+                    {'attr':{'class':'form-control'}}) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(formCreateServ.Label,'Label :',
+                    {'label_attr':{'class':'control-label'}}) }}
+
+                    {{ form_widget(formCreateServ.Label,
+                    {'attr':{'class':'form-control'}}) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(formCreateServ.Type,'Type :',
+                    {'label_attr':{'class':'control-label'}}) }}
+
+                    {{ form_widget(formCreateServ.Type,
+                    {'attr':{'class':'form-control'}}) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ textarea_widget(formCreateServ.Description,'Description :',
+                    {'label_attr':{'class':'control-label'}}) }}
+
+                    {{ form_widget(formCreateServ.Description,
+                    {'attr':{'class':'form-control'}}) }}
+
+                </div>
+
+                <div class="checkbox">
+                    {{ checkbox_label(formCreateServ.Vente,'Vente :') }}
+
+                    {{ form_widget(formCreateServ.Vente) }}
+
+                </div>
+
+                <div class="checkbox">
+                    {{ checkbox_label(formCreateServ.Achat,'Achat :') }}
+
+                    {{ form_widget(formCreateServ.Achat) }}
+
+                </div>
+
+                <div class="checkbox">
+                    {{ checkbox_label(formCreateServ.Achat,'Achat :') }}
+
+                    {{ form_widget(formCreateServ.Achat) }}
+
+                </div>
+
             </div>
             <div class="col-lg-4 col-md-4">
                 <h2>Liste des services</h2>
