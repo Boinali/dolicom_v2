@@ -67,11 +67,8 @@ class categoryController extends Controller
                 ))
             ))
             ->add('Color', TextType::class,array(
-                "required" => false,
-                    new Regex(array(
-                        'message' => 'la couleur doit être en hexadecimal',
-                        'pattern' => "/^[0-9a-f]{3,6}$/i"
-                    )))
+//                'pattern' => '/^[0-9a-f]{3,6}$/i',
+                "required" => false)
             )
             ->getForm();
 
