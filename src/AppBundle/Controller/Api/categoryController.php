@@ -63,7 +63,7 @@ class categoryController extends Controller
                 new NotBlank(),
                 new Regex(array(
                     'message' => 'le Type doit être un entier',
-                    'pattern' => '^[0-9]+$'
+                    'pattern' => '/[^0-9]/'
                 ))
             ))
             ->add('Color', TextType::class,array(
