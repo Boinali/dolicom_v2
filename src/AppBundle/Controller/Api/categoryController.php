@@ -43,9 +43,9 @@ class categoryController extends Controller
 
 
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
-            ->add('Label', 'text')
-            ->add('Type', 'text')
-            ->add('Color', 'text')
+            ->add('Label', TextType::class)
+            ->add('Type', NumberType::class)
+            ->add('Color', TextType::class)
             ->getForm();
 
         $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateServ')
