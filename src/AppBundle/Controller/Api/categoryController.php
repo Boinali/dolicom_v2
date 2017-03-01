@@ -34,6 +34,9 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+
 class categoryController extends Controller
 {
     /**
@@ -44,7 +47,11 @@ class categoryController extends Controller
 
 
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
-            ->add('Label', TextType::class)
+            ->add('Label', TextType::class, array(
+                'constraints' => array(
+                    new NotBlank(),
+                )
+            ))
             ->add('Type', NumberType::class)
             ->add('Color', TextType::class)
             ->getForm();
