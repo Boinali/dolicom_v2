@@ -107,20 +107,27 @@
 
                     </div>
 
-                    <div class="checkbox-inline">
-                        {{ checkbox_label(formCreateServ.Vente,'Vente :') }}
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="{{ formCreateServ.Vente.vars.value }}">Vente :
+                    </label>
 
-                        {{ form_widget(formCreateServ.Vente) }}
-                        {{  }}
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="{{ formCreateServ.Achat.vars.value }}">Achat :
+                    </label>
+                        {#{{ checkbox_label(formCreateServ.Vente,'Vente :') }}#}
 
-                    </div>
+                        {#{{ form_widget(formCreateServ.Vente) }}#}
+                        {#{{  }}#}
 
-                    <div class="checkbox-inline">
-                        {{ checkbox_label(formCreateServ.Achat,'Achat :') }}
+                    {#<div class="checkbox-inline">#}
+                        {#{{ checkbox_label(formCreateServ.Achat,'Achat :') }}#}
 
-                        {{ form_widget(formCreateServ.Achat) }}
+                        {#{{ form_widget(formCreateServ.Achat) }}#}
 
-                    </div>
+                    {#</div>#}
+                {#<label class="control-label" for="{{ formCreateCat.Label.vars.id }}">Label :</label>#}
+                {#<input type="text" class="form-control" id="{{ formCreateCat.Label.vars.id }}"#}
+                {#name="{{ formCreateCat.Label.vars.full_name }}" value="{{ formCreateCat.Label.vars.value }}">#}
 
                     {#<div class="form-group">#}
                         {#{{ checkbox_label(formCreateServ.Prix t t c,'Prix TTC :',#}
