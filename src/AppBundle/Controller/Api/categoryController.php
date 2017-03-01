@@ -53,18 +53,32 @@ class categoryController extends Controller
             ->add('Label', TextType::class, array(
                 'constraints' => array(
                     new NotBlank(),
-//                    new Regex(array(
-//                        'message' => 'le Nom doit contenir au moin 1 è valide (A-Z maj ou min)',
-//                        'pattern' => "/^[a-zA-Z]+$/"
-//                    ))
+                    new Regex(array(
+                        'message' => 'le Nom doit contenir au moin 1 caractère valide (A-Z maj ou min)',
+                        'pattern' => "/^[a-zA-Z]+$/"
+                    ))
                 )
             ))
             ->add('Type', NumberType::class,array(
-//                new NotBlank(),
+                'constraints' => array(
+                    new NotBlank(),
+                    new Regex(array(
+                        'message' => 'Le type doit contenir au moin 1 /^[0-9a-f]{3,6}$/i entier',
+                        'pattern' => "/[^0-9]/"
+                    ))
+                )
             ))
             ->add('Color', TextType::class,array(
 //                'pattern' => '/^[0-9a-f]{3,6}$/i',
-                "required" => false))
+                "required" => false,
+                'constraints' => array(
+                    new NotBlank(),
+                    new Regex(array(
+                        'message' => 'Caractere hexadecimal attendu',
+                        'pattern' => "/^[0-9a-f]{3,6}$/i"
+                    ))
+                )
+            ))
             ->getForm();
 
         $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateServ')

@@ -30,7 +30,7 @@
 
                         {% do formCreateCat.Label.setRendered %}
                         {% if not formCreateCat.Label.vars.valid %}
-                            {% for error in /[^0-9]/.Label.vars.errors %}
+                            {% for error in formCreateCat.Label.vars.errors %}
                                 <span class="help-block">{{ error.message }}</span>
                             {% endfor %}
                         {% endif %}
