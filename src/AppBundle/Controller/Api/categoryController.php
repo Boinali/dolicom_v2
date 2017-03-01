@@ -54,7 +54,7 @@ class categoryController extends Controller
                 'constraints' => array(
                     new NotBlank(),
                     new Regex(array(
-                        'message' => 'le nom doit etre 1 caractere',
+                        'message' => 'le nom doit etre 1 caractere (A-Z)',
                         'pattern' => "/^[a-zA-Z]+$/"
                     ))
                 )
