@@ -43,9 +43,9 @@ class categoryController extends Controller
 
 
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
-            ->add('Label', 'text', ['attr' => ['data-help'  => 'Task name should be short and actionable']])
-            ->add('Type', 'text', ['attr' => ['data-help'  => 'Task name should be short and actionable']])
-            ->add('Color', 'text', ['attr' => ['data-help'  => 'Task name should be short and actionable']])
+            ->add('Label', 'text')
+            ->add('Type', 'text')
+            ->add('Color', 'text')
             ->getForm();
 
         $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateServ')
