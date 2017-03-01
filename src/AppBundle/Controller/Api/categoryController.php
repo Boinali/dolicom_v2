@@ -53,10 +53,10 @@ class categoryController extends Controller
             ->add('Label', TextType::class, array(
                 'constraints' => array(
                     new NotBlank(),
-                    new Regex(array(
-                        'message' => 'le Nom doit contenir au moin 1 è valide (A-Z maj ou min)',
-                        'pattern' => "/^[a-zA-Z]+$/"
-                    ))
+//                    new Regex(array(
+//                        'message' => 'le Nom doit contenir au moin 1 è valide (A-Z maj ou min)',
+//                        'pattern' => "/^[a-zA-Z]+$/"
+//                    ))
                 )
             ))
             ->add('Type', NumberType::class,array(
