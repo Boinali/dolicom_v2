@@ -60,7 +60,7 @@ class categoryController extends Controller
                 )
             ))
             ->add('Type', NumberType::class,array(
-                new NotBlank(),
+//                new NotBlank(),
             ))
             ->add('Color', TextType::class,array(
 //                'pattern' => '/^[0-9a-f]{3,6}$/i',
