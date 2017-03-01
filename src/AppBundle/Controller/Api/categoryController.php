@@ -8,7 +8,7 @@
 
 namespace AppBundle\Controller\Api;
 
-use MongoDB\BSON\Regex;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
