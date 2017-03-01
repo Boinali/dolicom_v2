@@ -13,17 +13,17 @@
                 <form method="post" {{ form_enctype(formCreateCat) }}>
                     {{ form_start(formCreateCat) }}
                         {{ form_widget(formCreateCat) }}
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-success">Creer service</button>
-                                </div>
-                            </div>
+                            {#<div class="form-group">#}
+                                {#<div class="col-sm-offset-2 col-sm-10">#}
+                                    {#<button type="submit" class="btn btn-success">Creer service</button>#}
+                                {#</div>#}
+                            {#</div>#}
                 </form>
                 {{ form_end(formCreateCat) }}
             </div>
         </div>
         <div class="col-lg-4 col-md-4">
-            <h2>Litse des catégories</h2>
+            <h2>Liste des catégories</h2>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
                 {{ form_widget(formCreateServ) }}
             </div>
             <div class="col-lg-4 col-md-4">
-                <h2>Litse des services</h2>
+                <h2>Liste des services</h2>
             </div>
         </div>
     </div>
