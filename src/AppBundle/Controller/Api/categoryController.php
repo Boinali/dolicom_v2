@@ -38,7 +38,7 @@ class categoryController extends Controller
     /**
      * @Route("/api/categories", name = "dolib_categories")
      */
-    public function createAction(Request $request)
+    public function newAction(Request $request)
     {
 
 
