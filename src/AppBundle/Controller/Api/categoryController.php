@@ -55,7 +55,7 @@ class categoryController extends Controller
                     new NotBlank(),
                 )
             ))
-//            ->add('Type', NumberType::class)
+            ->add('Type', NumberType::class)
             ->add('Color', TextType::class)
             ->getForm();
 
