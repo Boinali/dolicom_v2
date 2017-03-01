@@ -81,6 +81,8 @@ class categoryController extends Controller
                     $content, RequestInterface::METHOD_POST);
 
                 /*complete code with control*/
+
+
             }
 
             if ($request->request->has('formCreateServ')){

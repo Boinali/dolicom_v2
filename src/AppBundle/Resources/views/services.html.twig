@@ -19,18 +19,22 @@
                     {% endif %}
 
                     <div class="form-group {{ class }}">
+                        {#<label class="control-label" for="{{ formCreateCat.Label.vars.id }}">Label :</label>#}
+                        {#<input type="text" class="form-control" id="{{ formCreateCat.Label.vars.id }}"#}
+                        {#name="{{ formCreateCat.Label.vars.full_name }}" value="{{ formCreateCat.Label.vars.value }}">#}
+
                         {{ form_label(formCreateCat.Label,'Label :',
-                        {'label_attr':{'class':'control-label'}})}}
+                        {'label_attr':{'class':'control-label'}}) }}
 
                         {{ form_widget(formCreateCat.Label,
                         {'attr':{'class':'form-control'}}) }}
 
-                        {% do formCreateCat.Label.setRendered %}
-                        {% if not formCreateCat.Label.vars.valid %}
-                            {% for error in form.Label.vars.errors %}
-                                <span class="help-block">{{ error.message }}</span>
-                            {% endfor %}
-                        {% endif %}
+                        {#{% do formCreateCat.Label.setRendered %}#}
+                        {#{% if not formCreateCat.Label.vars.valid %}#}
+                            {#{% for error in form.Label.vars.errors %}#}
+                                {#<span class="help-block">{{ error.message }}</span>#}
+                            {#{% endfor %}#}
+                        {#{% endif %}#}
                     </div>
                     <div class="form-group">
                         {{ form_row(formCreateCat.Type,
