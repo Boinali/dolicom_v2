@@ -12,13 +12,15 @@
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateCat) }}>
                     {{ form_start(formCreateCat, {'attr': {'novalidate': 'novalidate'}}) }}
-                    {{ dump() }}
                     {% set class='' %}
                     {% if not formCreateCat.Label.vars.valid %}
                         {% set class = 'has-error' %}
                     {% endif %}
 
                     <div class="form-group {{ class }}">
+                        {#<label class="control-label" for="{{ formCreateCat.Label.vars.id }}">Label :</label>#}
+                        {#<input type="text" class="form-control" id="{{ formCreateCat.Label.vars.id }}"#}
+                        {#name="{{ formCreateCat.Label.vars.full_name }}" value="{{ formCreateCat.Label.vars.value }}">#}
 
                         {{ form_label(formCreateCat.Label,'Nom :',
                         {'label_attr':{'class':'control-label'}}) }}
