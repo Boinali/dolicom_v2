@@ -55,7 +55,7 @@ class categoryController extends Controller
                     new NotBlank(),
                     new Regex(array(
                         'message' => 'le Nom doit contenir au moin 1 è valide (A-Z maj ou min)',
-                        'pattern' => "/^[a-zA-Z]+$/"
+                        'pattern' => "/^[a-zA-Z]+$/",
                     ))
                 )
             ))
