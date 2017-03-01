@@ -12,7 +12,7 @@
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateCat) }}>
                     {{ form_start(formCreateCat, {'attr': {'novalidate': 'novalidate'}}) }}
-                    {#{{ dump() }}#}
+                    {{ dump() }}
                     {% set class='' %}
                     {% if not formCreateCat.Label.vars.valid %}
                         {% set class = 'has-error' %}
@@ -29,12 +29,12 @@
                         {{ form_widget(formCreateCat.Label,
                         {'attr':{'class':'form-control'}}) }}
 
-                        {#{% do formCreateCat.Label.setRendered %}#}
-                        {#{% if not formCreateCat.Label.vars.valid %}#}
-                            {#{% for error in form.Label.vars.errors %}#}
-                                {#<span class="help-block">{{ error.message }}</span>#}
-                            {#{% endfor %}#}
-                        {#{% endif %}#}
+                        {% do formCreateCat.Label.setRendered %}
+                        {% if not formCreateCat.Label.vars.valid %}
+                            {% for error in form.Label.vars.errors %}
+                                <span class="help-block">{{ error.message }}</span>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                     <div class="form-group">
                         {{ form_row(formCreateCat.Type,
