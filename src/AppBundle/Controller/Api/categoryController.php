@@ -59,10 +59,20 @@ class categoryController extends Controller
                     ))
                 )
             ))
-            ->add('Type', NumberType::class)
+            ->add('Type', NumberType::class,array(
+                new NotBlank(),
+                new Regex(array(
+                    'message' => 'le Type doit être un entier',
+                    'pattern' => "/^[0-9]*$/"
+                ))
+            ))
             ->add('Color', TextType::class,array(
-//                'pattern' => '/^[0-9a-f]{3,6}$/i',
-                "required" => false))
+                "required" => false,
+                    new Regex(array(
+                        'message' => 'la couleur doit être en hexadecimal',
+                        'pattern' => "/^[0-9a-f]{3,6}$/i"
+                    )))
+            )
             ->getForm();
 
         $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateServ')
