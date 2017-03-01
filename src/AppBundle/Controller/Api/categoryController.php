@@ -115,7 +115,7 @@ class categoryController extends Controller
             ->add('Vente', CheckboxType::class)
             ->add('Achat', CheckboxType::class)
             ->add('Prix_TTC', MoneyType::class, array(
-                'scale' => '2',
+                'scale' => 2,
                 'currency' => 'EUR',
             ))
             ->getForm();
