@@ -25,7 +25,12 @@
                         {{ form_widget(formCreateCat.Label,
                         {'attr':{'class':'form-control'}}) }}
 
-                        {{ form_errors(formCreateCat.Label) }}
+                        {% do formCreateCat.Label.setRendered %}
+                        {% if not formCreateCat.Label.vars.valid %}
+                            {% for error in form.Label.vars.errors %}
+                                <span class="help-block">{{ error.message }}</span>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                     <div class="form-group">
                         {{ form_row(formCreateCat.Type,
@@ -35,6 +40,8 @@
                         {{ form_row(formCreateCat.Color,
                         {'attr':{'class':'form-control'}})}}
                     </div>
+
+                    <button type="submit" class="btn btn-success">Creer categorie</button>
 
                 </form>
                 {{ form_end(formCreateCat) }}
