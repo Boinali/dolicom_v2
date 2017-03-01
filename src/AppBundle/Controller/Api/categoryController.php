@@ -63,13 +63,11 @@ class categoryController extends Controller
                 new NotBlank(),
                 new Regex(array(
                     'message' => 'le Type doit être un entier',
-                    'pattern' => "/^[0-9]*$/"
                 ))
             ))
             ->add('Color', TextType::class,array(
 //                'pattern' => '/^[0-9a-f]{3,6}$/i',
-                "required" => false)
-            )
+                "required" => false))
             ->getForm();
 
         $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateServ')
