@@ -55,7 +55,7 @@ class categoryController extends Controller
                     new NotBlank(),
                     new Regex(array(
                         'message' => 'le nom doit etre 1 caractere',
-                        'pattern' => "/[a-zA-Z]+/g"
+                        'pattern' => "/^[a-zA-Z]+$/"
                     ))
                 )
             ))
