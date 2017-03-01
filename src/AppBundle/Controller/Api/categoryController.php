@@ -34,6 +34,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -81,14 +84,40 @@ class categoryController extends Controller
             ->getForm();
 
         $formCreateServ = $this->get('form.factory')->createNamedBuilder('formCreateServ')
-            ->add('Reference', TextType::class)
-            ->add('Label', TextType::class)
-            ->add('Type', TextType::class)
-            ->add('Description', TextType::class)
-            ->add('Vente', TextType::class)
-            ->add('Achat', TextType::class)
-            ->add('Prix_TTC', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'créer'))
+            ->add('Reference', TextType::class, array(
+                'constraints' => array(
+                    new NotBlank(),
+                    new Regex(array(
+                        'message' => 'La reférence doit contenir au moin 1 caractère valide (A-Z maj ou min)',
+                        'pattern' => "/^[a-zA-Z]+$/"
+                    ))
+                )
+            ))
+            ->add('Label', TextType::class, array(
+                'constraints' => array(
+                    new NotBlank(),
+                    new Regex(array(
+                        'message' => 'le label doit contenir au moin 1 caractère valide (A-Z maj ou min)',
+                        'pattern' => "/^[a-zA-Z]+$/"
+                    ))
+                )
+            ))
+            ->add('Type', TextType::class, array(
+                'constraints' => array(
+                    new NotBlank(),
+                    new Regex(array(
+                        'message' => 'au moin 1 entier attendu',
+                        'pattern' => "/[^0-9]/"
+                    ))
+                )
+            ))
+            ->add('Description', TextareaType::class)
+            ->add('Vente', CheckboxType::class)
+            ->add('Achat', CheckboxType::class)
+            ->add('Prix_TTC', MoneyType::class, array(
+                'scale' => '2',
+                'currency' => 'EUR',
+            ))
             ->getForm();
 
         if('POST' === $request->getMethod()){
