@@ -11,8 +11,11 @@
             <h2>Categories</h2>
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateCat) }}>
-                    {{ form_start(formCreateCat) }}
-                        {{ form_widget(formCreateCat) }}
+                    {{ form_start(formCreateCat, {'attr': {'novalidate': 'novalidate'}}) }}
+                    <div class="form-group">
+                        {{ form_row(formCreateCat.Label)
+                    </div>
+                        {#{{ form_widget(formCreateCat) }}#}
                             {#<div class="form-group">#}
                                 {#<div class="col-sm-offset-2 col-sm-10">#}
                                     {#<button type="submit" class="btn btn-success">Creer service</button>#}
