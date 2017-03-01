@@ -12,15 +12,25 @@
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateCat) }}>
                     {{ form_start(formCreateCat, {'attr': {'novalidate': 'novalidate'}}) }}
+                    {{ dump() }}
+                    {#{% set class='' %}#}
+                    {#{% if not  %}#}
+
                     <div class="form-group">
-                        {{ form_row(formCreateCat.Label,
+                        {{ form_label(formCreateCat.Label,
+                        'Label :')}}
+                        {{ form_widget(formCreateCat.Label,
+                        {'attr':{'class':'form-control'}}) }}
+                        {{ form_errors(formCreateCat.Label,
+                        ) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(formCreateCat.Type,
                         {'attr':{'class':'form-control'}})}}
                     </div>
                     <div class="form-group">
-                        {{ form_row(formCreateCat.Type)}}
-                    </div>
-                    <div class="form-group">
-                        {{ form_row(formCreateCat.Color)}}
+                        {{ form_row(formCreateCat.Color,
+                        {'attr':{'class':'form-control'}})}}
                     </div>
 
                 </form>
