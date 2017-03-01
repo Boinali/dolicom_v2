@@ -69,7 +69,6 @@ class categoryController extends Controller
                 )
             ))
             ->add('Color', TextType::class,array(
-//                'pattern' => '/^[0-9a-f]{3,6}$/i',
                 "required" => false,
                 'constraints' => array(
                     new NotBlank(),
