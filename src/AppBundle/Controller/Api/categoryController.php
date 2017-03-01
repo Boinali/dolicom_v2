@@ -37,6 +37,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 class categoryController extends Controller
 {
     /**
@@ -48,11 +50,12 @@ class categoryController extends Controller
 
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
             ->add('Label', TextType::class, array(
+                'pattern' => '/[a-zA]',
                 'constraints' => array(
                     new NotBlank(),
                 )
             ))
-            ->add('Type', NumberType::class)
+//            ->add('Type', NumberType::class)
             ->add('Color', TextType::class)
             ->getForm();
 
@@ -75,7 +78,8 @@ class categoryController extends Controller
                 $formCreateCat->handleRequest($request);
 
                 $label = $formCreateCat->get('Label')->getData();
-                $type = $formCreateCat->get('Type')->getData();
+                // defaut type
+                $type = 0;
                 $color = $formCreateCat->get('Color')->getData();
 
                 $content["label"] = $label;
