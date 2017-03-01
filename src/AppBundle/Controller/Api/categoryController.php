@@ -30,6 +30,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -38,7 +39,7 @@ class categoryController extends Controller
     /**
      * @Route("/api/categories", name = "dolib_categories")
      */
-    public function newAction(Request $request)
+    public function createAction(Request $request)
     {
 
 
