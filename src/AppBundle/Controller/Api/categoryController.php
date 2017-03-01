@@ -50,7 +50,7 @@ class categoryController extends Controller
 
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
             ->add('Label', TextType::class, array(
-                'pattern' => '/^[A-Za-z]+$/',
+//                'pattern' => '/^[A-Za-z]+$/',
                 'constraints' => array(
                     new NotBlank(),
                 )
