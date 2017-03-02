@@ -44,7 +44,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * @Route("/api/categories", name = "dolib_categories")
+ * @Route("/api/categories")
  */
 
 class categoryController extends Controller
