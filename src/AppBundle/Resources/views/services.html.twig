@@ -122,11 +122,11 @@
                     </div>
 
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="{{ formCreateServ.Vente.vars.value }}">Vente :
+                        <input type="checkbox" value="{{ formCreateServ.Vente.vars.value }}" name="{{ formCreateServ.Vente.vars.full_name }}">Vente :
                     </label>
 
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="{{ formCreateServ.Achat.vars.value }}">Achat :
+                        <input type="checkbox" value="{{ formCreateServ.Achat.vars.value }}" name="{{ formCreateServ.Achat.vars.full_name }}">Achat :
                     </label>
                         {#{{ checkbox_label(formCreateServ.Vente,'Vente :') }}#}
 
