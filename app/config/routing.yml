@@ -66,5 +66,5 @@ app_crud:
         prefix:   /crud
 
 dolib_categories:
-    ressource: "@AppBundle/Controller/Api/categoryController.php"
+    resource: "@AppBundle/Controller/Api/categoryController.php"
     prefix: /api/categories
