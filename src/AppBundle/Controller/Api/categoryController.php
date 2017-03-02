@@ -103,9 +103,8 @@ class categoryController extends Controller
                 )
             ))
 //            ->add('Type', NumberType::class)
-            ->add('Service', CheckboxType::class)
-            ->add('Type', CheckboxType::class, array(
-                'choices' => array('Produit' => 'Produit', 'Service' => 'Service'),
+            ->add('Type', 'choice', array(
+                'choices' => array(0 => 'Produit', 1 => 'Service'),
                 'expended' => true,
                 'multiple' => false
             ))
@@ -152,11 +151,11 @@ class categoryController extends Controller
                 $label = $formCreateServ->get('Label')->getData();
                 $desc = $formCreateServ->get('Description')->getData();
                 // type defaut = 0 = Produit
-                $type = 0;
-                if('Service' === $formCreateServ->get('Type')->getData())
-                {
-                    $type = 1;
-                }
+                var_dump($formCreateServ->get('Type')->getData());die();
+//                if('Service' === $formCreateServ->get('Type')->getData())
+//                {
+//                    $type = 1;
+//                }
                 $status = $formCreateServ->get('Vente')->getData();
                 $status_buy = $formCreateServ->get('Achat')->getData();
                 $price_TTC = $formCreateServ->get('Prix_TTC')->getData();
