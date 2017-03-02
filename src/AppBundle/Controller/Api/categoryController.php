@@ -50,6 +50,8 @@ class categoryController extends Controller
      */
     public function createAction(Request $request)
     {
+        $contentTest = $this->getlistAction();
+        var_dump($contentTest);die();
         $this->getlistAction();
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
             ->add('Label', TextType::class, array(
@@ -203,9 +205,10 @@ class categoryController extends Controller
 
         $contentList = json_decode($response->getContent());
 //        dump($response);die;
-        return $this->render('AppBundle::services.html.twig',
-            array(
-            'contentList' => $contentList
-        ));
+//        return $this->render('AppBundle::services.html.twig',
+//            array(
+//            'contentList' => $contentList
+//        ));
+        return $contentList;
     }
 }
