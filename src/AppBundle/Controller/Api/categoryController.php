@@ -108,7 +108,9 @@ class categoryController extends Controller
                 'expanded' => true,
                 'multiple' => false
             ))
-            ->add('Description', TextareaType::class)
+            ->add('Description', TextareaType::class, array(
+                'required' => false,
+            ))
             ->add('Vente', CheckboxType::class)
             ->add('Achat', CheckboxType::class)
             ->add('Prix_TTC', MoneyType::class, array(
