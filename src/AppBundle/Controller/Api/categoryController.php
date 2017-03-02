@@ -37,7 +37,6 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -104,10 +103,10 @@ class categoryController extends Controller
                 )
             ))
 //            ->add('Type', NumberType::class)
-            ->add('Type', ChoiceType::class, array(
+            ->add('Type', 'choice', array(
                 'choices' => array(0 => 'Produit', 1 => 'Service'),
                 'expanded' => true,
-//                'multiple' => false
+                'multiple' => false
             ))
             ->add('Description', TextareaType::class, array(
                 'required' => false,
