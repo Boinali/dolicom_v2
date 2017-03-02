@@ -177,7 +177,7 @@ class categoryController extends Controller
 
         }
 
-        $contentService = $this->getlistAction();
+        $contentService = $this->getlistServiceAction();
 
         return $this->render('AppBundle::services.html.twig',
             array(
@@ -190,7 +190,7 @@ class categoryController extends Controller
     }
 
 
-    public function getlistAction()
+    public function getlistServiceAction()
     {
         // recup des produits et services
         $buzz = $this->container->get('buzz');
