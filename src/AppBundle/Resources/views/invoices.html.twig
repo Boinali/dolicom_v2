@@ -45,29 +45,29 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Référence</th>
-                    <th>Label</th>
-                    <th>Type</th>
-                    <th>Prix TTC</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Ville</th>
+                    <th>Identifiant client</th>
                 </tr>
                 </thead>
                 <tbody>
-                {#{% for content in contentService %}#}
-                    {#<tr>#}
-                        {#<td>#}
-                            {#{{ content.ref }}#}
-                        {#</td>#}
-                        {#<td>#}
-                            {#{{ content.label }}#}
-                        {#</td>#}
-                        {#<td>#}
-                            {#{{ content.type }}#}
-                        {#</td>#}
-                        {#<td>#}
-                            {#{{ content.price_ttc }}#}
-                        {#</td>#}
-                    {#</tr>#}
-                {#{% endfor %}#}
+                {% for content in contentClient %}
+                    <tr>
+                        <td>
+                            {{ content.name }}
+                        </td>
+                        <td>
+                            {{ content.email }}
+                        </td>
+                        <td>
+                            {{ content.town }}
+                        </td>
+                        <td>
+                            {{ content.id }}
+                        </td>
+                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>
