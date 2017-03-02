@@ -7,11 +7,19 @@
     <h1>Gestion des {{ block('title') }}</h1>
 
     <div class="row">
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_end(form) }}
-        <br>
-        {{ Erreur|default('-') }}
+
+
+        <div class="col-lg-4 col-md-4">
+            <h2>Liste des Facture</h2>
+        </div>
+
+        <div class="col-lg-4 col-md-4">
+            <h2>Liste des clients / Tiers</h2>
+        </div>
+
+        <div class="col-lg-4 col-md-4">
+            <h2>Création Facture</h2>
+        </div>
     </div>
 
 {% endblock %}

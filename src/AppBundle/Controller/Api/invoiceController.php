@@ -30,6 +30,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
@@ -38,19 +39,28 @@ class invoiceController extends Controller
     /**
      * @Route("/api/invoices", name = "dolib_invoices")
      */
-     public function createInvoice(Request $request)
+     public function createInvoiceAction(Request $request)
      {
-         $msg = "";
          $form = $this->createFormBuilder()
-             ->add('id_User', TextType::class)
-             ->add('save', SubmitType::class, array('label' => 'créer'))
+             ->add('id_client', TextType::class)
+             ->add('total_ttc', NumberType::class)
+             ->add('facture_name', TextType::class)
+             ->add('brouillon', 'choice', array(
+                 'choices' => array(0 => 'Oui', 1 => 'Non'),
+                 'expanded' => true,
+                 'multiple' => false
+             ))
              ->getForm();
 
          $form->handleRequest($request);
 
          if ($form->isSubmitted() && $form->isValid()) {
-             $id = $form->get('id_User')->getData();
-             $content["socid"] = $id;
+
+             $content["socid"] = $form->get('id_client')->getData();
+             $content["total_ttc"] = $form->get('total_ttc')->getData();
+             $content["ref"] = $form->get('facture_name')->getData();
+             $content["brouillon"] = $form->get('brouillon')->getData();
+
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
              $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
@@ -59,13 +69,41 @@ class invoiceController extends Controller
              /*complete code with control*/
          }
 
+         $contentInvoice = $this->getInvoiceListAction();
+         $contentClient = $this->getListThirdPartyAction();
+
          return $this->render('AppBundle::invoices.html.twig',
              array(
                  'form' => $form->createView(),
-                 'Erreur' => $msg,
+                 'contentInvoice' => $contentInvoice,
+                 'contentClient' => $contentClient
              )
          );
 
      }
+
+    public function getInvoiceListAction()
+    {
+        $buzz = $this->container->get('buzz');
+
+        $browser = $buzz->getBrowser('dolibarr');
+        $response = $browser->get('/invoice/list/?api_key=712f3b895ada9274714a881c2859b617');
+
+        $contentList = json_decode($response->getContent());
+
+        return $contentList;
+    }
+
+    public function getListThirdPartyAction()
+    {
+        $buzz = $this->container->get('buzz');
+
+        $browser = $buzz->getBrowser('dolibarr');
+        $response = $browser->get('/thirdparty/list/?api_key=712f3b895ada9274714a881c2859b617');
+
+        $contentList = json_decode($response->getContent());
+
+        return $contentList;
+    }
 
 }
