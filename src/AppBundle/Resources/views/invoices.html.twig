@@ -79,31 +79,31 @@
         <div class="col-lg-4 col-md-4">
             <h2>Création Facture</h2>
             <form method="post">
-                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                {{ form_start(formCreateInvoice, {'attr': {'novalidate': 'novalidate'}}) }}
 
                 <div class="form-group">
-                    {{ form_label(form.facture_name, 'Référence :',
+                    {{ form_label(formCreateInvoice.facture_name, 'Référence :',
                     {'attr':{'class':'form-label'}})}}
 
-                    {{ form_widget(form.facture_name,
+                    {{ form_widget(formCreateInvoice.facture_name,
                     {'attr':{'class':'form-control'}}) }}
 
                 </div>
 
                 <div class="form-group">
-                    {{ form_label(form.id_client, 'ID client :',
+                    {{ form_label(formCreateInvoice.id_client, 'ID client :',
                     {'attr':{'class':'form-label'}})}}
 
-                    {{ form_widget(form.id_client,
+                    {{ form_widget(formCreateInvoice.id_client,
                     {'attr':{'class':'form-control', 'placeholder':'Entrer un ID client valid'}}) }}
 
                 </div>
 
                 <div class="form-group">
-                    {{ form_label(form.total_ttc, 'Prix TTC :',
+                    {{ form_label(formCreateInvoice.total_ttc, 'Prix TTC :',
                     {'attr':{'class':'form-label'}})}}
 
-                    {{ form_widget(form.total_ttc,
+                    {{ form_widget(formCreateInvoice.total_ttc,
                     {'attr':{'class':'form-control'}}) }}
 
                 </div>
