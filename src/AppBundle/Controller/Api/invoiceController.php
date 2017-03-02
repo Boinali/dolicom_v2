@@ -31,7 +31,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -53,7 +53,7 @@ class invoiceController extends Controller
              ->add('id_client', TextType::class)
              ->add('total_ttc', NumberType::class)
              ->add('facture_name', TextType::class)
-             ->add('brouillon', 'choice', array(
+             ->add('brouillon', ChoiceType::class, array(
                  'choices' => array(0 => 'Oui', 1 => 'Non'),
                  'expanded' => true,
                  'multiple' => false
