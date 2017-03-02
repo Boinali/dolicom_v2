@@ -153,8 +153,6 @@ class categoryController extends Controller
                 $label = $formCreateServ->get('Label')->getData();
                 $desc = $formCreateServ->get('Description')->getData();
                 // type defaut = 0 = Produit
-                var_dump($formCreateServ->get('Type')->getData());die();
-
                 $status = $formCreateServ->get('Vente')->getData();
                 $status_buy = $formCreateServ->get('Achat')->getData();
                 $price_TTC = $formCreateServ->get('Prix_TTC')->getData();
