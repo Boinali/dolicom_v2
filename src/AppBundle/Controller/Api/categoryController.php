@@ -121,7 +121,8 @@ class categoryController extends Controller
                 $label = $formCreateCat->get('Label')->getData();
                 $parent_link = $formCreateCat->get('Parent_link')->getData();
                 $color = $formCreateCat->get('Color')->getData();
-
+                // defaut type
+                $content["type"] = 0;
                 $content["label"] = $label;
                 $content["fk_parent"] = $parent_link;
                 $content["color"] = $color;
