@@ -105,7 +105,7 @@ class categoryController extends Controller
 //            ->add('Type', NumberType::class)
             ->add('Type', 'choice', array(
                 'choices' => array(0 => 'Produit', 1 => 'Service'),
-                'expended' => true,
+                'expanded' => true,
                 'multiple' => false
             ))
             ->add('Description', TextareaType::class)
