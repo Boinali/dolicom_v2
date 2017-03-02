@@ -58,6 +58,7 @@ class invoiceController extends Controller
                  'expanded' => true,
                  'multiple' => false
              ))
+             ->add('save', SubmitType::class, array('label' => 'Create Post'))
              ->getForm();
 
          $form->handleRequest($request);
