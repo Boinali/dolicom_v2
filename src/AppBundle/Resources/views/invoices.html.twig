@@ -78,44 +78,46 @@
 
         <div class="col-lg-4 col-md-4">
             <h2>Création Facture</h2>
-            <form method="post">
-                {{ form_start(formCreateInvoice, {'attr': {'novalidate': 'novalidate'}}) }}
+            <div class="well">
+                <form method="post">
+                    {{ form_start(formCreateInvoice, {'attr': {'novalidate': 'novalidate'}}) }}
 
-                <div class="form-group">
-                    {{ form_label(formCreateInvoice.facture_name, 'Référence :',
-                    {'attr':{'class':'form-label'}})}}
+                    <div class="form-group">
+                        {{ form_label(formCreateInvoice.facture_name, 'Référence :',
+                        {'attr':{'class':'form-label'}})}}
 
-                    {{ form_widget(formCreateInvoice.facture_name,
-                    {'attr':{'class':'form-control'}}) }}
+                        {{ form_widget(formCreateInvoice.facture_name,
+                        {'attr':{'class':'form-control'}}) }}
 
-                </div>
+                    </div>
 
-                <div class="form-group">
-                    {{ form_label(formCreateInvoice.id_client, 'ID client :',
-                    {'attr':{'class':'form-label'}})}}
+                    <div class="form-group">
+                        {{ form_label(formCreateInvoice.id_client, 'ID client :',
+                        {'attr':{'class':'form-label'}})}}
 
-                    {{ form_widget(formCreateInvoice.id_client,
-                    {'attr':{'class':'form-control', 'placeholder':'Entrer un ID client valid'}}) }}
+                        {{ form_widget(formCreateInvoice.id_client,
+                        {'attr':{'class':'form-control', 'placeholder':'Entrer un ID client valid'}}) }}
 
-                </div>
+                    </div>
 
-                <div class="form-group">
-                    {{ form_label(formCreateInvoice.total_ttc, 'Prix TTC :',
-                    {'attr':{'class':'form-label'}})}}
+                    <div class="form-group">
+                        {{ form_label(formCreateInvoice.total_ttc, 'Prix TTC :',
+                        {'attr':{'class':'form-label'}})}}
 
-                    {{ form_widget(formCreateInvoice.total_ttc,
-                    {'attr':{'class':'form-control'}}) }}
+                        {{ form_widget(formCreateInvoice.total_ttc,
+                        {'attr':{'class':'form-control'}}) }}
 
-                </div>
+                    </div>
 
-                <label class="radio-inline">
-                    <input type="radio" name="{{ formCreateInvoice.brouillon.vars.full_name }}" value="{{ formCreateInvoice.brouillon.children.0.vars.value }}">Oui
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="{{ formCreateInvoice.brouillon.vars.full_name }}" value="{{ formCreateInvoice.brouillon.children.1.vars.value }}">Non
-                </label>
-                <button type="submit" class="btn btn-success">Creer facture</button>
-            </form>
+                    <label class="radio-inline">
+                        <input type="radio" name="{{ formCreateInvoice.brouillon.vars.full_name }}" value="{{ formCreateInvoice.brouillon.children.0.vars.value }}">Oui
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="{{ formCreateInvoice.brouillon.vars.full_name }}" value="{{ formCreateInvoice.brouillon.children.1.vars.value }}">Non
+                    </label>
+                    <button type="submit" class="btn btn-success">Creer facture</button>
+                </form>
+            </div>
         </div>
     </div>
 
