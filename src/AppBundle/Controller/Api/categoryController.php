@@ -65,7 +65,7 @@ class categoryController extends Controller
 
             ))
             ->add('Color', TextType::class,array(
-//                "required" => false,
+                "required" => false,
 //                'constraints' => array(
 //                    new NotBlank(),
 //                    new Regex(array(
