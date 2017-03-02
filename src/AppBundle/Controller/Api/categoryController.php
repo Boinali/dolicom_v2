@@ -61,7 +61,7 @@ class categoryController extends Controller
                     ))
                 )
             ))
-            ->add('Type', NumberType::class,array(
+            ->add('Parent_link', NumberType::class,array(
 
             ))
             ->add('Color', TextType::class,array(
@@ -119,12 +119,11 @@ class categoryController extends Controller
                 $formCreateCat->handleRequest($request);
 
                 $label = $formCreateCat->get('Label')->getData();
-                // defaut type
-                $type = 0;
+                $parent_link = $formCreateCat->get('Parent_link')->getData();
                 $color = $formCreateCat->get('Color')->getData();
 
                 $content["label"] = $label;
-                $content["type"] = $type;
+                $content["fk_parent"] = $parent_link;
                 $content["color"] = $color;
                 $buzz = $this->container->get('buzz');
                 $browser = $buzz->getBrowser('dolibarr');
@@ -185,9 +184,6 @@ class categoryController extends Controller
 
     }
 
-    /*
-     * @Method
-     * */
     public function getlistServiceAction()
     {
         // recup des produits et services
