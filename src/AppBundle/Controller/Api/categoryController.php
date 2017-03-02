@@ -62,23 +62,17 @@ class categoryController extends Controller
                 )
             ))
             ->add('Type', NumberType::class,array(
-                'constraints' => array(
-                    new NotBlank(),
-                    new Regex(array(
-                        'message' => 'Le type doit contenir au moin 1 /^[0-9a-f]{3,6}$/i entier',
-                        'pattern' => "/[^0-9]/"
-                    ))
-                )
+
             ))
             ->add('Color', TextType::class,array(
-                "required" => false,
-                'constraints' => array(
-                    new NotBlank(),
-                    new Regex(array(
-                        'message' => 'Caractere hexadecimal attendu',
-                        'pattern' => "/^[0-9a-f]{3,6}$/i"
-                    ))
-                )
+//                "required" => false,
+//                'constraints' => array(
+//                    new NotBlank(),
+//                    new Regex(array(
+//                        'message' => 'Caractere hexadecimal attendu',
+//                        'pattern' => "/^[0-9a-f]{3,6}$/i"
+//                    ))
+//                )
             ))
             ->getForm();
 
@@ -191,7 +185,9 @@ class categoryController extends Controller
 
     }
 
-
+    /*
+     * @Method
+     * */
     public function getlistServiceAction()
     {
         // recup des produits et services
