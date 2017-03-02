@@ -59,7 +59,7 @@ class invoiceController extends Controller
                  'multiple' => false
              ))
              ->getForm();
-            dump($form);
+
          $form->handleRequest($request);
 
          if ($form->isSubmitted() && $form->isValid()) {
