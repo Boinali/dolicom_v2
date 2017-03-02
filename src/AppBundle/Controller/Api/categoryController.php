@@ -50,8 +50,7 @@ class categoryController extends Controller
      */
     public function createAction(Request $request)
     {
-
-
+        $this->getlistAction();
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
             ->add('Label', TextType::class, array(
                 'constraints' => array(
@@ -193,9 +192,7 @@ class categoryController extends Controller
 
     }
 
-    /**
-     * @Route("/api/categories", name = "dolib_List")
-     */
+
     public function getlistAction()
     {
         // recup des produits et services
