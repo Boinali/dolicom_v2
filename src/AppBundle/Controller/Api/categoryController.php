@@ -45,7 +45,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @Route("/api/categories", name = "dolib_categories")
- * @Method({"GET", "POST"})
  */
 
 class categoryController extends Controller
