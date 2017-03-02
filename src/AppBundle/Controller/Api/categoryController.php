@@ -51,7 +51,6 @@ class categoryController extends Controller
     public function createAction(Request $request)
     {
 
-        $this->getlistAction();
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
             ->add('Label', TextType::class, array(
                 'constraints' => array(
