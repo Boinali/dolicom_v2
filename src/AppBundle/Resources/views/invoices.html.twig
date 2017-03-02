@@ -79,34 +79,34 @@
         <div class="col-lg-4 col-md-4">
             <h2>Création Facture</h2>
             <form method="post">
-                {#{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}#}
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
-                {#<div class="form-group">#}
-                    {#{{ form_label(form.facture_name, 'Référence :',#}
-                    {#{'attr':{'class':'form-label'}})}}#}
+                <div class="form-group">
+                    {{ form_label(form.facture_name, 'Référence :',
+                    {'attr':{'class':'form-label'}})}}
 
-                    {#{{ form_widget(form.facture_name,#}
-                    {#{'attr':{'class':'form-control', 'placeholder':'Taper un ID valid'}}) }}#}
+                    {{ form_widget(form.facture_name,
+                    {'attr':{'class':'form-control', 'placeholder':'Taper un ID valid'}}) }}
 
-                {#</div>#}
+                </div>
 
-                {#<div class="form-group">#}
-                    {#{{ form_label(form.id_client, 'ID client :',#}
-                    {#{'attr':{'class':'form-label'}})}}#}
+                <div class="form-group">
+                    {{ form_label(form.id_client, 'ID client :',
+                    {'attr':{'class':'form-label'}})}}
 
-                    {#{{ form_widget(form.id_client,#}
-                    {#{'attr':{'class':'form-control', 'placeholder':'Taper un ID valid'}}) }}#}
+                    {{ form_widget(form.id_client,
+                    {'attr':{'class':'form-control', 'placeholder':'Taper un ID valid'}}) }}
 
-                {#</div>#}
+                </div>
 
-                {#<div class="form-group">#}
-                    {#{{ form_label(form.total_ttc, 'Prix TTC :',#}
-                    {#{'attr':{'class':'form-label'}})}}#}
+                <div class="form-group">
+                    {{ form_label(form.total_ttc, 'Prix TTC :',
+                    {'attr':{'class':'form-label'}})}}
 
-                    {#{{ form_widget(form.total_ttc,#}
-                    {#{'attr':{'class':'form-control', 'placeholder':'Taper un ID valid'}}) }}#}
+                    {{ form_widget(form.total_ttc,
+                    {'attr':{'class':'form-control', 'placeholder':'Taper un ID valid'}}) }}
 
-                {#</div>#}
+                </div>
 
                 {#<label class="radio-inline">#}
                     {#<input type="radio" name="{{  }}" value="{{  }}">Produit :#}
