@@ -52,7 +52,6 @@ class categoryController extends Controller
     {
         $contentService = $this->getlistAction();
 
-
         $this->getlistAction();
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
             ->add('Label', TextType::class, array(
@@ -177,14 +176,11 @@ class categoryController extends Controller
 
                 /*complete code with control*/
             }
+            $contentService = $this->getlistAction();
+
         }
 
 
-//        if ($formCreateCat->isSubmitted() && $formCreateCat->isValid())
-//        {
-//
-//        }
-        $msg = "eee";
         return $this->render('AppBundle::services.html.twig',
             array(
                 'formCreateCat' => $formCreateCat->createView(),
