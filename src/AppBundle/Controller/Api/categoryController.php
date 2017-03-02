@@ -191,7 +191,9 @@ class categoryController extends Controller
         );
 
     }
-
+    /**
+     * @Route("/api/categories", name = "dolib_categornnies")
+     */
     public function getListAction()
     {
         // recup des produits et services
