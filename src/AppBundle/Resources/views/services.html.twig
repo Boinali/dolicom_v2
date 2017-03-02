@@ -106,6 +106,15 @@
 
                     </div>
 
+                    <div class="form-group">
+                        {{ form_label(formCreateServ.Prix_TTC,'Prix TTC :',
+                        {'label_attr':{'class':'control-label'}}) }}
+
+                        {{ form_widget(formCreateServ.Prix_TTC,
+                        {'attr':{'class':'form-control'}}) }}
+
+                    </div>
+
                     <label class="checkbox-inline">
                         <input type="checkbox" value="{{ formCreateServ.Vente.vars.value }}">Vente :
                     </label>
@@ -115,26 +124,6 @@
                     </label>
                         {#{{ checkbox_label(formCreateServ.Vente,'Vente :') }}#}
 
-                        {#{{ form_widget(formCreateServ.Vente) }}#}
-                        {#{{  }}#}
-
-                    {#<div class="checkbox-inline">#}
-                        {#{{ checkbox_label(formCreateServ.Achat,'Achat :') }}#}
-
-                        {#{{ form_widget(formCreateServ.Achat) }}#}
-
-                    {#</div>#}
-                {#<label class="control-label" for="{{ formCreateCat.Label.vars.id }}">Label :</label>#}
-                {#<input type="text" class="form-control" id="{{ formCreateCat.Label.vars.id }}"#}
-                {#name="{{ formCreateCat.Label.vars.full_name }}" value="{{ formCreateCat.Label.vars.value }}">#}
-
-                    {#<div class="form-group">#}
-                        {#{{ checkbox_label(formCreateServ.Prix t t c,'Prix TTC :',#}
-                        {#{'attr':{'class':'form-control'}}) }}#}
-
-                        {#{{ form_widget(formCreateServ.Achat) }}#}
-
-                    {#</div>#}
                 <button type="submit" class="btn btn-success">Creer service</button>
             </form>
             </div>
