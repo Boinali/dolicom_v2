@@ -182,11 +182,12 @@ class categoryController extends Controller
 //        {
 //
 //        }
-
+        $msg = "eee";
         return $this->render('AppBundle::services.html.twig',
             array(
                 'formCreateCat' => $formCreateCat->createView(),
                 'formCreateServ' => $formCreateServ->createView(),
+                'msg' => $msg,
             )
         );
 
