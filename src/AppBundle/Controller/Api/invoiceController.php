@@ -69,6 +69,7 @@ class invoiceController extends Controller
              $content["total_ttc"] = $form->get('total_ttc')->getData();
              $content["ref"] = $form->get('facture_name')->getData();
              $content["brouillon"] = $form->get('brouillon')->getData();
+             var_dump($content["brouillon"]);die();
 
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
