@@ -178,12 +178,14 @@ class categoryController extends Controller
         }
 
         $contentService = $this->getlistServiceAction();
+        $contentCategorie = $this->getListCategoriAction();
 
         return $this->render('AppBundle::services.html.twig',
             array(
                 'formCreateCat' => $formCreateCat->createView(),
                 'formCreateServ' => $formCreateServ->createView(),
                 'contentService' => $contentService,
+                'contentCategorie' => $contentCategorie,
             )
         );
 
@@ -197,6 +199,19 @@ class categoryController extends Controller
 
         $browser = $buzz->getBrowser('dolibarr');
         $response = $browser->get('/product/list/?api_key=712f3b895ada9274714a881c2859b617');
+
+        $contentList = json_decode($response->getContent());
+
+        return $contentList;
+    }
+
+
+    public function getListCategoriAction()
+    {
+        $buzz = $this->container->get('buzz');
+
+        $browser = $buzz->getBrowser('dolibarr');
+        $response = $browser->get('/category/list/?api_key=712f3b895ada9274714a881c2859b617');
 
         $contentList = json_decode($response->getContent());
 

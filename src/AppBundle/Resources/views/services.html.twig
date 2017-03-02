@@ -12,7 +12,7 @@
             <div class="well">
                 <form method="post">
                     {{ form_start(formCreateCat, {'attr': {'novalidate': 'novalidate'}}) }}
-                    {{ dump() }}
+                    {#{{ dump() }}#}
                     {% set class='' %}
                     {% if not formCreateCat.Label.vars.valid %}
                         {% set class = 'has-error' %}
@@ -56,6 +56,34 @@
         </div>
         <div class="col-lg-4 col-md-4">
             <h2>Liste des catégories</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Type</th>
+                    <th>ID</th>
+                    <th>Parent id TTC</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for content in contentCategorie %}
+                    <tr>
+                        <td>
+                            {{ content.label }}
+                        </td>
+                        <td>
+                            {{ content.type }}
+                        </td>
+                        <td>
+                            {{ content.id }}
+                        </td>
+                        <td>
+                            {{ content.fk_parent }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 
