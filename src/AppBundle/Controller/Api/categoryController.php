@@ -102,14 +102,12 @@ class categoryController extends Controller
                     ))
                 )
             ))
-            ->add('Type', NumberType::class, array(
-                'constraints' => array(
-                    new NotBlank(),
-                    new Regex(array(
-                        'message' => 'au moin 1 entier attendu',
-                        'pattern' => "/[^0-9]/"
-                    ))
-                )
+//            ->add('Type', NumberType::class)
+            ->add('Service', CheckboxType::class)
+            ->add('Type', CheckboxType::class, array(
+                'choices' => array('Produit' => 'Produit', 'Service' => 'Service'),
+                'expended' => true,
+                'multiple' => false
             ))
             ->add('Description', TextareaType::class)
             ->add('Vente', CheckboxType::class)
@@ -153,7 +151,12 @@ class categoryController extends Controller
                 $ref = $formCreateServ->get('Reference')->getData();
                 $label = $formCreateServ->get('Label')->getData();
                 $desc = $formCreateServ->get('Description')->getData();
-                $type = $formCreateServ->get('Type')->getData();
+                // type defaut = 0 = Produit
+                $type = 0;
+                if('Service' === $formCreateServ->get('Type')->getData())
+                {
+                    $type = 1;
+                }
                 $status = $formCreateServ->get('Vente')->getData();
                 $status_buy = $formCreateServ->get('Achat')->getData();
                 $price_TTC = $formCreateServ->get('Prix_TTC')->getData();

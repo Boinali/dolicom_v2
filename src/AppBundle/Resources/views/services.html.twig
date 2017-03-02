@@ -89,13 +89,15 @@
                     </div>
 
                     <div class="form-group">
-                        {{ form_label(formCreateServ.Type,'Type :',
-                        {'label_attr':{'class':'control-label'}}) }}
+                        {{ form_label(formCreateServ.Type'Type :') }}
 
-                        {{ form_widget(formCreateServ.Type,
-                        {'attr':{'class':'form-control'}}) }}
+                        {{ form_widget(formCreateServ.Type) }}
 
                     </div>
+
+                    {#<label class="radio-inline">#}
+                        {#<input type="radio" value="{{ formCreateServ.Vente.vars.value }}">Vente :#}
+                    {#</label>#}
 
                     <div class="form-group">
                         {{ form_label(formCreateServ.Description,'Description :',
