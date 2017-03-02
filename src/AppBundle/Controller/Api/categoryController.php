@@ -157,7 +157,7 @@ class categoryController extends Controller
                 $status = $formCreateServ->get('Vente')->getData();
                 $status_buy = $formCreateServ->get('Achat')->getData();
                 $price_TTC = $formCreateServ->get('Prix_TTC')->getData();
-
+                var_dump($price_TTC);die();
                 $content["ref"] = $ref;
                 $content["label"] = $label;
                 $content["description"] = $desc;
