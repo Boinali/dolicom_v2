@@ -56,7 +56,8 @@ class invoiceController extends Controller
              ->add('brouillon', ChoiceType::class, array(
                  'choices' => array(0 => 'Oui', 1 => 'Non'),
                  'expanded' => true,
-                 'multiple' => false
+                 'multiple' => false,
+                 'choices_as_values' => true
              ))
              ->getForm();
 
