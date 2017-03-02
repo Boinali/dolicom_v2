@@ -202,7 +202,7 @@ class categoryController extends Controller
         $buzz = $this->container->get('buzz');
 
         $browser = $buzz->getBrowser('dolibarr');
-        $response = $browser->get('/api/index.php/product/list/?api_key=712f3b895ada9274714a881c2859b617');
+        $response = $browser->get('/product/list/?api_key=712f3b895ada9274714a881c2859b617');
 
         $contentList = json_decode($response->getContent());
         dump($response);die();
