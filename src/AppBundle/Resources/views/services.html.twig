@@ -12,6 +12,7 @@
             <div class="well">
                 <form method="post" {{ form_enctype(formCreateCat) }}>
                     {{ form_start(formCreateCat, {'attr': {'novalidate': 'novalidate'}}) }}
+                    {{ dump() }}
                     {% set class='' %}
                     {% if not formCreateCat.Label.vars.valid %}
                         {% set class = 'has-error' %}
