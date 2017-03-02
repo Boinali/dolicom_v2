@@ -50,7 +50,6 @@ class categoryController extends Controller
      */
     public function createAction(Request $request)
     {
-        $contentService = $this->getlistAction();
 
         $this->getlistAction();
         $formCreateCat = $this->get('form.factory')->createNamedBuilder('formCreateCat')
@@ -176,10 +175,10 @@ class categoryController extends Controller
 
                 /*complete code with control*/
             }
-            $contentService = $this->getlistAction();
 
         }
 
+        $contentService = $this->getlistAction();
 
         return $this->render('AppBundle::services.html.twig',
             array(
