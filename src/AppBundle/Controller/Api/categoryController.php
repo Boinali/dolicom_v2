@@ -196,7 +196,7 @@ class categoryController extends Controller
     /**
      * @Route("/api/categories", name = "dolib_List")
      */
-    public function getListAction()
+    public function getlistAction()
     {
         // recup des produits et services
         $buzz = $this->container->get('buzz');
