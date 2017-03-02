@@ -10,7 +10,7 @@
         <div class="col-lg-4 col-md-4">
             <h2>Categories</h2>
             <div class="well">
-                <form method="post" {{ form_enctype(formCreateCat) }}>
+                <form method="post">
                     {{ form_start(formCreateCat, {'attr': {'novalidate': 'novalidate'}}) }}
                     {% set class='' %}
                     {% if not formCreateCat.Label.vars.valid %}
@@ -68,7 +68,7 @@
         <div class="col-lg-4 col-md-4">
             <h2>Services</h2>
             <div class="well">
-                <form method="post" {{ form_enctype(formCreateServ) }}
+                <form method="post">
                     {{ form_start(formCreateServ, {'attr': {'novalidate': 'novalidate'}}) }}
                     <div class="form-group">
                         {{ form_label(formCreateServ.Reference,'Reference :',
