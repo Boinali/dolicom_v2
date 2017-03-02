@@ -11,10 +11,66 @@
         {{ dump() }}
         <div class="col-lg-4 col-md-4">
             <h2>Liste des Facture</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Référence</th>
+                    <th>Prix TTC</th>
+                    <th>Statut/brouillon</th>
+                    <th>Identifiant client</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for content in contentInvoice %}
+                    <tr>
+                        <td>
+                            {{ content.ref }}
+                        </td>
+                        <td>
+                            {{ content.total_ttc }}
+                        </td>
+                        <td>
+                            {{ content.statut }}
+                        </td>
+                        <td>
+                            {{ content.socid }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
 
         <div class="col-lg-4 col-md-4">
-            <h2>Liste des clients / Tiers</h2>
+            <h2>Liste des clients/Tiers</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Référence</th>
+                    <th>Label</th>
+                    <th>Type</th>
+                    <th>Prix TTC</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for content in contentService %}
+                    <tr>
+                        <td>
+                            {{ content.ref }}
+                        </td>
+                        <td>
+                            {{ content.label }}
+                        </td>
+                        <td>
+                            {{ content.type }}
+                        </td>
+                        <td>
+                            {{ content.price_ttc }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
 
         <div class="col-lg-4 col-md-4">
