@@ -43,13 +43,11 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-/**
- * @Route("/api/categories")
- */
-
 class categoryController extends Controller
 {
-
+    /**
+     * @Route("/api/categories", name = "dolib_categories")
+     */
     public function createAction(Request $request)
     {
 
