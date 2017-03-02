@@ -102,7 +102,7 @@ class categoryController extends Controller
                     ))
                 )
             ))
-            ->add('Type', TextType::class, array(
+            ->add('Type', NumberType::class, array(
                 'constraints' => array(
                     new NotBlank(),
                     new Regex(array(
