@@ -192,6 +192,9 @@ class categoryController extends Controller
 
     }
 
+    /**
+     * @Route("/api/categories", name = "dolib_categories")
+     */
     public function getListAction()
     {
         // recup des produits et services
@@ -202,7 +205,8 @@ class categoryController extends Controller
 
         $contentList = json_decode($response->getContent());
 //        dump($response);die;
-        return $this->render('AppBundle::services.html.twig', array(
+        return $this->render('AppBundle::services.html.twig',
+            array(
             'contentList' => $contentList
         ));
     }
