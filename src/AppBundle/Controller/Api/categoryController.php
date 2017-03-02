@@ -205,7 +205,7 @@ class categoryController extends Controller
         $response = $browser->get('/product/list/?api_key=712f3b895ada9274714a881c2859b617');
 
         $contentList = json_decode($response->getContent());
-        dump($contentList);die();
+        dump($response);die;
 //        return $this->render('AppBundle::services.html.twig');
     }
 }
