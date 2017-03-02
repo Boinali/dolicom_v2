@@ -136,22 +136,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                    {#{% for content in contentList %}#}
-                        {#<tr>#}
-                            {#<td>#}
-                                {#{{ content.ref }}#}
-                            {#</td>#}
-                            {#<td>#}
-                                {#{{ content.label }}#}
-                            {#</td>#}
-                            {#<td>#}
-                                {#{{ content.type }}#}
-                            {#</td>#}
-                            {#<td>#}
-                            {#{{ content.price_ttc }}#}
-                            {#</td>#}
-                        {#</tr>#}
-                    {#{% endfor %}#}
+                    {% for content in contentService %}
+                        <tr>
+                            <td>
+                                {{ content.ref }}
+                            </td>
+                            <td>
+                                {{ content.label }}
+                            </td>
+                            <td>
+                                {{ content.type }}
+                            </td>
+                            <td>
+                            {{ content.price_ttc }}
+                            </td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
