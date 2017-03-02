@@ -203,7 +203,7 @@ class categoryController extends Controller
         $contentList = json_decode($response->getContent());
 //        dump($response);die;
         return $this->render('AppBundle::services.html.twig', array(
-            'contentList' => $contentList,
+            'contentList' => $contentList
         ));
     }
 }
