@@ -66,24 +66,32 @@ class invoiceController extends Controller
          {
              if($request->request->has('formCreateInvoice')){
                  $formCreateInvoice->handleRequest($request);
-                 var_dump('here');die();
+
+                 // 1 - creation facture/client
+                 $content["socid"] = $formCreateInvoice->get('id_client')->getData();
+                 $buzz = $this->container->get('buzz');
+                 $browser = $buzz->getBrowser('dolibarr');
+                 $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
+                     $content, RequestInterface::METHOD_POST);
+
+
              }
          }
-         if ($formCreateInvoice->isSubmitted() && $formCreateInvoice->isValid()) {
-
-             $content["socid"] = $formCreateInvoice->get('id_client')->getData();
-             $content["total_ttc"] = $formCreateInvoice->get('total_ttc')->getData();
-             $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
-             $content["brouillon"] = $formCreateInvoice->get('brouillon')->getData();
-
-             $buzz = $this->container->get('buzz');
-             $browser = $buzz->getBrowser('dolibarr');
-             $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
-                 $content, RequestInterface::METHOD_POST);
-             var_dump($response);die();
-
-             /*complete code with control*/
-         }
+//         if ($formCreateInvoice->isSubmitted() && $formCreateInvoice->isValid()) {
+//
+//             $content["socid"] = $formCreateInvoice->get('id_client')->getData();
+//             $content["total_ttc"] = $formCreateInvoice->get('total_ttc')->getData();
+//             $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
+//             $content["brouillon"] = $formCreateInvoice->get('brouillon')->getData();
+//
+//             $buzz = $this->container->get('buzz');
+//             $browser = $buzz->getBrowser('dolibarr');
+//             $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
+//                 $content, RequestInterface::METHOD_POST);
+//             var_dump($response);die();
+//
+//             /*complete code with control*/
+//         }
 
          $contentInvoice = $this->getInvoiceListAction();
          $contentClient = $this->getListThirdPartyAction();
