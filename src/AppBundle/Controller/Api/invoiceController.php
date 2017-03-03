@@ -79,7 +79,6 @@ class invoiceController extends Controller
                          $content["total_ttc"] = $formCreateInvoice->get('total_ttc')->getData();
                          $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
                          $content["brouillon"] = $formCreateInvoice->get('brouillon')->getData();
-                         var_dump($content["brouillon"]); die();
                          $response = $browser->submit('/invoice/{n0}/?api_key=712f3b895ada9274714a881c2859b617&id='.$id_fact.'',
                              $content, RequestInterface::METHOD_PUT);
                      }
