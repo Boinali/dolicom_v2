@@ -53,8 +53,8 @@ class invoiceController extends Controller
              ->add('id_client', TextType::class)
              ->add('total_ttc', NumberType::class)
              ->add('facture_name', TextType::class)
-             ->add('brouillon', 'choice', array(
-                 'choices' => array(1 => 'Oui', 0 => 'Non'),
+             ->add('status', 'choice', array(
+                 'choices' => array(0 => 'Oui', 1 => 'Non'),
                  'expanded' => true,
                  'multiple' => false
              ))
@@ -82,7 +82,10 @@ class invoiceController extends Controller
                          // 2 - MAJ de la brouillon = 0 => facture impaye
                          $content["total_ttc"] = $formCreateInvoice->get('total_ttc')->getData();
                          $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
-                         $content["brouillon"] = $formCreateInvoice->get('brouillon')->getData();
+                         $content["statut"] = $formCreateInvoice->get('status')->getData();
+                         if($content["statut"] === 1){
+                             $content["brouillon"] = null,
+                         }
                          $response = $browser->submit('/invoice/{n0}/?api_key=712f3b895ada9274714a881c2859b617&id='.$id_fact.'',
                              $content, RequestInterface::METHOD_PUT);
                      }
