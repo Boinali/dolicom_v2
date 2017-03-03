@@ -53,11 +53,6 @@ class invoiceController extends Controller
              ->add('id_client', TextType::class)
              ->add('total_ttc', NumberType::class)
              ->add('facture_name', TextType::class)
-             ->add('brouillon', 'choice', array(
-                 'choices' => array(0 => 'Oui', 1 => 'Non'),
-                 'expanded' => true,
-                 'multiple' => false
-             ))
              ->add('save', SubmitType::class, array('label' => 'Create Post'))
              ->getForm();
 
@@ -80,14 +75,11 @@ class invoiceController extends Controller
                      {
                          // recuperation de l'id de la nouvelle facture creer
                          $id_fact = $response->getContent();
-                         // recuperation de l'objet facture qui vient d'etre creer
-
-                         // 2 - MAJ de la facture
+                         // 2 - MAJ de la brouillon = 0 => facture impaye
                          $content["total_ttc"] = $formCreateInvoice->get('total_ttc')->getData();
                          $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
                          $content["brouillon"] = $formCreateInvoice->get('brouillon')->getData();
-//             $buzz = $this->container->get('buzz');
-//             $browser = $buzz->getBrowser('dolibarr');
+                         var_dump($content["brouillon"]); die();
                          $response = $browser->submit('/invoice/{n0}/?api_key=712f3b895ada9274714a881c2859b617&id='.$id_fact.'',
                              $content, RequestInterface::METHOD_PUT);
                      }
@@ -96,21 +88,6 @@ class invoiceController extends Controller
 
              }
          }
-//         if ($formCreateInvoice->isSubmitted() && $formCreateInvoice->isValid()) {
-//
-//             $content["socid"] = $formCreateInvoice->get('id_client')->getData();
-//             $content["total_ttc"] = $formCreateInvoice->get('total_ttc')->getData();
-//             $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
-//             $content["brouillon"] = $formCreateInvoice->get('brouillon')->getData();
-//
-//             $buzz = $this->container->get('buzz');
-//             $browser = $buzz->getBrowser('dolibarr');
-//             $response = $browser->submit('/invoice/?api_key=712f3b895ada9274714a881c2859b617',
-//                 $content, RequestInterface::METHOD_POST);
-//             var_dump($response);die();
-//
-//             /*complete code with control*/
-//         }
 
          $contentInvoice = $this->getInvoiceListAction();
          $contentClient = $this->getListThirdPartyAction();
