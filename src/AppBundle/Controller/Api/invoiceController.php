@@ -61,9 +61,9 @@ class invoiceController extends Controller
              ->add('save', SubmitType::class, array('label' => 'Create Post'))
              ->getForm();
 
-         $form->handleRequest($request);
 
          if ($form->isSubmitted() && $form->isValid()) {
+             $form->handleRequest($request);
             var_dump('here');die();
              $content["socid"] = $form->get('id_client')->getData();
              $content["total_ttc"] = $form->get('total_ttc')->getData();
