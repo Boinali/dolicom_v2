@@ -84,7 +84,7 @@ class invoiceController extends Controller
                          $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
                          $content["statut"] = $formCreateInvoice->get('status')->getData();
                          if($content["statut"] === 1){
-                             $content["brouillon"] = null,
+                             $content["brouillon"] = null;
                          }
                          $response = $browser->submit('/invoice/{n0}/?api_key=712f3b895ada9274714a881c2859b617&id='.$id_fact.'',
                              $content, RequestInterface::METHOD_PUT);
