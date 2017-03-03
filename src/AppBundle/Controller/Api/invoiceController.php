@@ -76,7 +76,7 @@ class invoiceController extends Controller
 
                  if(200 === $response->getStatusCode())
                  {
-                     if(2 === $response->headers->get('Content-Length'))
+                     if(0 < $response->getContent())
                      {
                          // recuperation de l'id de la nouvelle facture creer
                          $id_fact = $response->getContent();
