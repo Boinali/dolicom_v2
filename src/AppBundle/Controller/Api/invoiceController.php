@@ -64,7 +64,7 @@ class invoiceController extends Controller
          $form->handleRequest($request);
 
          if ($form->isSubmitted() && $form->isValid()) {
-
+            var_dump('here');die();
              $content["socid"] = $form->get('id_client')->getData();
              $content["total_ttc"] = $form->get('total_ttc')->getData();
              $content["ref"] = $form->get('facture_name')->getData();
