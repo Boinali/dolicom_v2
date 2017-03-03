@@ -49,7 +49,7 @@ class invoiceController extends Controller
      */
      public function createInvoiceAction(Request $request)
      {
-         $form = $this->get('form.factory')->createNamedBuilder('formCreateInvoice')
+         $formCreateInvoice = $this->get('form.factory')->createNamedBuilder('formCreateInvoice')
              ->add('id_client', TextType::class)
              ->add('total_ttc', NumberType::class)
              ->add('facture_name', TextType::class)
@@ -62,13 +62,19 @@ class invoiceController extends Controller
              ->getForm();
 
 
-         if ($form->isSubmitted() && $form->isValid()) {
-             $form->handleRequest($request);
-            var_dump('here');die();
-             $content["socid"] = $form->get('id_client')->getData();
-             $content["total_ttc"] = $form->get('total_ttc')->getData();
-             $content["ref"] = $form->get('facture_name')->getData();
-             $content["brouillon"] = $form->get('brouillon')->getData();
+         if('POST' === $request->getMethod())
+         {
+             if($request->request->has('formCreateInvoice')){
+                 $formCreateInvoice->handleRequest($request);
+                 var_dump('here');die();
+             }
+         }
+         if ($formCreateInvoice->isSubmitted() && $formCreateInvoice->isValid()) {
+
+             $content["socid"] = $formCreateInvoice->get('id_client')->getData();
+             $content["total_ttc"] = $formCreateInvoice->get('total_ttc')->getData();
+             $content["ref"] = $formCreateInvoice->get('facture_name')->getData();
+             $content["brouillon"] = $formCreateInvoice->get('brouillon')->getData();
 
              $buzz = $this->container->get('buzz');
              $browser = $buzz->getBrowser('dolibarr');
@@ -84,7 +90,7 @@ class invoiceController extends Controller
 
          return $this->render('AppBundle::invoices.html.twig',
              array(
-                 'formCreateInvoice' => $form->createView(),
+                 'formCreateInvoice' => $formCreateInvoice->createView(),
                  'contentInvoice' => $contentInvoice,
                  'contentClient' => $contentClient
              )
