@@ -5,7 +5,9 @@
 {% block body %}
 
     <h1>Gestion des {{ block('title') }}</h1>
-
+    {{ form_start(formInvoiceYolo) }}
+    {{ form_widget(formInvoiceYolo) }}
+    {{ form_end(formInvoiceYolo) }}
     <div class="row">
         {#{{ dump() }}#}
         <div class="col-lg-4 col-md-4">

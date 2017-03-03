@@ -8,6 +8,8 @@
 
 namespace AppBundle\Controller\Api;
 
+use AppBundle\Entity\Api\Invoice;
+
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,6 +51,18 @@ class invoiceController extends Controller
      */
      public function createInvoiceAction(Request $request)
      {
+         $invoice = new Invoice();
+         $form = $this->createFormBuilder($invoice)
+             ->add('id_client', TextType::class)
+             ->add('total_ttc', NumberType::class)
+             ->add('facture_name', TextType::class)
+             ->add('status', 'choice', array(
+                 'choices' => array(0 => 'Oui', 1 => 'Non'),
+                 'expanded' => true,
+                 'multiple' => false
+             ))
+             ->getForm();
+
          $formCreateInvoice = $this->get('form.factory')->createNamedBuilder('formCreateInvoice')
              ->add('id_client', TextType::class)
              ->add('total_ttc', NumberType::class)
@@ -90,8 +104,6 @@ class invoiceController extends Controller
                              $content, RequestInterface::METHOD_PUT);
                      }
                  }
-
-
              }
          }
 
@@ -100,6 +112,7 @@ class invoiceController extends Controller
 
          return $this->render('AppBundle::invoices.html.twig',
              array(
+                 'formInvoiceYolo' => $form->createView(),
                  'formCreateInvoice' => $formCreateInvoice->createView(),
                  'contentInvoice' => $contentInvoice,
                  'contentClient' => $contentClient
